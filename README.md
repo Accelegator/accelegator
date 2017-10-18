@@ -47,10 +47,10 @@ The following data will be collected through a text field.
     have one or if you do not use Twitter for professional purposes.
 - Favorite classes in major
   - What are your favorite classes that you have taken for your major?
-    Please list their numbers.
+    List their numbers.
 - Favorite classes not in major
   - What are your favorite classes that you have taken outside of your
-    major? Please list their numbers.
+    major? List their numbers.
 - Career plan
   - What is your career plan or goal?
 - Academic interests
