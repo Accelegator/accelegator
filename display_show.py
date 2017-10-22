@@ -1,4 +1,4 @@
-""" Displays one advisee's responses. """
+""" Displays an advisee's flattened responses. """
 
 # Implementation will be moved to display.py once completed
 
