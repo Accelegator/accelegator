@@ -69,3 +69,9 @@ The following data will be collected through a text field.
   - How is life going?
 - Questions for advisor
   - Do you have any questions for your advisor?
+
+## Dependencies
+
+```shell
+pip install --user pandas
+```
