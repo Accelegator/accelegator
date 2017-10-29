@@ -76,7 +76,5 @@ The following data will be collected through a text field.
 
 ### Dependencies
 ```shell
-pip install --user pandas
-pip3 install --user pytest-flake8
-pip3 install ansicolors
+pip install --user pandas pytest flake8 ansicolors
 ```
