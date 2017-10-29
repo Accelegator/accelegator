@@ -70,16 +70,11 @@ The following data will be collected through a text field.
 - Questions for advisor
   - Do you have any questions for your advisor?
 
-## Testing
-  
-### Running the Test Suite
 
-The test suite requires `pytest-flake8`, which can be installed with the following command:
 
-`pip3 install --user pytest-flake8`
+## Usage
 
-## Dependencies
-
+### Dependencies
 ```shell
-pip install --user pandas
+pip install --user pandas pytest flake8 ansicolors
 ```
