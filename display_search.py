@@ -3,17 +3,24 @@
 
 # external dependencies
 from colors import negative
+from colors import bold
 
 
-def display_search(list_of_tuples):
+def display_search(list_of_tuples, has_field=False):
     """ Returns string of all responses returned by search """
     TIMESTAMP_TUPLE_INDEX = 0
     TIMESTAMP_STRING_INDEX = 0
     TIMESTAMP_BOOLEAN_INDEX = 1
-    EMAIL_INDEX = 1
-    FIELD_INDEX = 2
-    RESPONSE_INDEX = 3
-    result = ""
+    KEYWORD_INDEX = 1
+    EMAIL_INDEX = 2
+    FIELD_INDEX = 3
+    RESPONSE_INDEX = 4
+
+    # using first response to get keyword and field (if has_field == True)
+    FIRST_RESPONSE = list_of_tuples[0]
+    KEYWORD = bold(FIRST_RESPONSE[KEYWORD_INDEX])
+    FIELD = bold(FIRST_RESPONSE[FIELD_INDEX])
+    result = "Displaying search results for keyword " + KEYWORD + " in field " + FIELD + "\n\n" if has_field else "Displaying search results for keyword " + KEYWORD + "\n\n"
 
     for response in list_of_tuples:
         # if timestamp is latest, invert the colors
