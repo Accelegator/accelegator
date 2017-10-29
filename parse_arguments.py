@@ -3,6 +3,7 @@
 import argparse
 import logging
 
+
 def parse_arguments(args):
     """ Parses command-line arguments """
 
