@@ -3,6 +3,7 @@ from display_search_with_field import display_search_with_field
 
 
 def test_display_search_with_field():
+    """ Checks if display_search() returns correct heading string when field is included """
     list = [(("timestamp", True), "keyword", "email", "field", "response")]
     result = display_search_with_field(list)
     num_of_spaces = 66
