@@ -3,6 +3,7 @@
 import logging
 import pandas
 
+
 def parse_csv_into_dataframe(filepath):
     """ parses csv file into an in-memory sqlite database """
     dataframe = pandas.read_csv(filepath)
