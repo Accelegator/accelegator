@@ -3,15 +3,15 @@
 # Implementation will be moved to display.py once completed
 
 def display_help(help):
-    print("Commands");
-    print("show <email>                   display flattened responses for advisee with <email>");
-    print("help <command>              display verbose descriptions of <command> and valid arguments");
-    print("help                        list commands & brief descriptions  ");
-    print("quit                         exit the program");
-    print("show <email> <field>         display responses for given field, incl. history");
-    print("list                         list advisees by emails, show latest response date");\
-    print("search <keyword>             search all fields of all responses of all students for keyword");
-    print("Search <field> <keyword>     ");
-    print("write command                write command output to file (prompt for filepath)");
-    
-return;
+    Help = """Commands
+            show <email>                      display flattened responses for advisee with <email>
+            help <command>                    display verbose descriptions of <command> and valid arguments
+            help                              list commands & brief descriptions
+            quit                              exit the program
+            show <email> <field>              display responses for given field, incl. history
+            list                              list advisees by emails, show latest response date
+            search <keyword>                  search all fields of all responses of all students for keyword
+            Search <field> <keyword>          search given of all responses of all students for keyword
+            write command                     write command output to file (prompt for filepath)""";
+
+    return Help; 
