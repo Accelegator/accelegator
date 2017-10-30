@@ -29,7 +29,4 @@ def display_show(tuple_of_tuples):
 
 def align(left, right):
     """ Returns string with "left" aligned to the left and "right" aligned to the right """
-    return "{:<40s}{:>40s}".format(left, right)		
-		
-tuple_of_tuples = (("timestamp", "id", "12345"), ("timestamp", "email", "maria@maria.com"))
-print(display_show(tuple_of_tuples))
+    return "{:<38s}{:>38s}".format(left, right)
