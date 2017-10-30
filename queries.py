@@ -1,6 +1,7 @@
 """ queries supporting the different user commands """
 
 import logging
+import pandas
 
 
 def query_list(dataframe):
@@ -23,14 +24,12 @@ def query_show_field(dataframe, field, short_email):
 
 def query_search(dataframe, keyword):
     """ returns dataframe rows containing the keyword """
-    # return type should be a list of tuples
-    # each tuple having format (email, field_name, field_content)
+    # return: [((timestamp, latest), keyword, email, field, response)]
 
 
 def query_search_field(dataframe, field, keyword):
     """ returns dataframe rows where the field contains the keyword """
-    # return type should be a list of tuples
-    # each tuple having format (email, field_name, field_content)
+    # return: [((timestamp, latest), keyword, email, field, response)]
 
 
 def determine_latest(dataframe, short_email, date, field):
