@@ -7,6 +7,7 @@ def display_show(tuple_of_tuples):
 	field = 1
 	timestamp = 0
 	response = 2
+	count = 0
 	string_tuple_of_tuples = ""
 	
 	#for each tuple in the tuple of tuples, we'll print out the field, timestamp, and the response given
@@ -15,7 +16,10 @@ def display_show(tuple_of_tuples):
 		string_tuple_of_tuples+=(textwrap.fill(str(tuple[field]), 80))
 		string_tuple_of_tuples+=(textwrap.fill(str(tuple[timestamp]), 80))
 		string_tuple_of_tuples+=(textwrap.fill(str(tuple[response]), 80))
-		return string_tuple_of_tuples
+		count+=1
+		print(count)
+		
+	return string_tuple_of_tuples
 		
 		
 tuple_of_tuples = (("timestamp", "id", "12345"), ("timestamp", "email", "maria@maria.com"))
