@@ -29,4 +29,4 @@ def display_show(tuple_of_tuples):
 
 def align(left, right):
     """ Returns string with "left" aligned to the left and "right" aligned to the right """
-    return "{:<38s}{:>38s}".format(left, right)
+    return "{:<40s}{:>40s}".format(left, right)
