@@ -7,20 +7,29 @@ def display_show(tuple_of_tuples):
 	field = 1
 	timestamp = 0
 	response = 2
-	count = 0
+	
+	field_str = ""
+	timestamp_str= ""
 	string_tuple_of_tuples = ""
 	
 	#for each tuple in the tuple of tuples, we'll print out the field, timestamp, and the response given
 	for tuple in tuple_of_tuples:
 		#textwrap.fill(<data>, 80) will wrap the text in lines of 80 characters.
-		string_tuple_of_tuples+=(textwrap.fill(str(tuple[field]), 80))
-		string_tuple_of_tuples+=(textwrap.fill(str(tuple[timestamp]), 80))
+		field_str = (textwrap.fill(str(tuple[field]), 80))
+		timestamp_str = (textwrap.fill(str(tuple[timestamp]), 80))
+		#align function will align text to the right and left side of the terminal
+		string_tuple_of_tuples += align(field_str, timestamp_str)
+		string_tuple_of_tuples+="\n"
+		#no alignment needed for the response
 		string_tuple_of_tuples+=(textwrap.fill(str(tuple[response]), 80))
-		count+=1
-		print(count)
+		string_tuple_of_tuples+="\n \n"
 		
 	return string_tuple_of_tuples
 		
+
+def align(left, right):
+    """ Returns string with "left" aligned to the left and "right" aligned to the right """
+    return "{:<40s}{:>40s}".format(left, right)		
 		
 tuple_of_tuples = (("timestamp", "id", "12345"), ("timestamp", "email", "maria@maria.com"))
 print(display_show(tuple_of_tuples))
