@@ -7,12 +7,14 @@ import sys
 from parser import parse_csv_into_dataframe
 from parse_arguments import parse_arguments
 import display_strings
+from defaults import DEFAULT_CSVFILE
+from spreadsheet import create_csv
 
 if __name__ == '__main__':
 
     ARGUMENTS = parse_arguments(sys.argv[1:])
     print(display_strings.WELCOME)
+    create_csv()
 
     # FIXME >> should match CSV filepath written from spreadsheet.py
-    CSVFILEPATH = "testing.nocommit.csv"
-    DATAFRAME = parse_csv_into_dataframe(CSVFILEPATH)
+    DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
