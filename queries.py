@@ -4,6 +4,10 @@ import logging
 import pandas
 
 
+EMAIL_INDEX=1
+TIMESTAMP_INDEX=0
+
+
 def parse_csv_into_dataframe(filepath):
     """ parses csv file into an pandas dataframe """
     dataframe = pandas.read_csv(filepath)
@@ -37,11 +41,20 @@ def query_search(dataframe, keyword):
     """ returns dataframe rows containing the keyword """
     logging.debug("query_search: " + keyword)
     retlist = []
+    (rows, cols) = dataframe.shape
+    for rowindex in range(0, rows):
+        for colindex in range(0, cols):
+            if keyword in str(dataframe.iat[rowindex, colindex]):
 
-    # FIXME: go through the entries in the dataframe
-    # FIXME: append those containing keyword to the retlist
-    # FIXME: in the specific format required
+                email = dataframe.iat[rowindex, EMAIL_INDEX]
+                field = dataframe.iat[0, colindex]
+                response = dataframe.iat[rowindex, colindex]
+                datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+                latest = _determine_latest(dataframe, email, timestamp, colindex)
+                timestamp = (datetime, latest)
 
+                retlist.append((timestamp, email, field, response))
+                break  # stop matching against this row early
     return (keyword, retlist)
     # return: (keyword, [((timestamp, latest), email, field, response)])
 
@@ -51,6 +64,7 @@ def query_search_field(dataframe, field, keyword):
     logging.debug("query_search_field: " + keyword + field)
 
     # FIXME: trim away the unneeded parts dataframe, without modifying the source
+    # (select EMAIL_INDEX column, field column, TIMESTAMP_INDEX column)
 
     (_, retlist) = query_search(dataframe, keyword)
     return (keyword, field, retlist)
