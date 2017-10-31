@@ -20,6 +20,3 @@ def repl(command, dataframe, key1, key2, key3):
             print(display_search(queries.query_search(dataframe, key1)))
         else:
             print(display_search_with_field(queries.query_search_field(dataframe, key1, key2)))
-
-    if command == "latest":
-        queries.determine_latest(dataframe, key1, key2, key3)
