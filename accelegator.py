@@ -32,5 +32,5 @@ if __name__ == '__main__':
         elif len(keywords) == 3:
             key1 = keywords[1]
             key2 = keywords[2]
-        repl.repl(command, key1, key2)
+        repl.repl(command, DATAFRAME, key1, key2)
         command = str(input('>>> '))
