@@ -1,13 +1,13 @@
 # Legalities and Privacy
 
-    The following section will document the legalities involved in using
+The following section will document the legalities involved in using
 Accelegator.  Because Accelegator is a program that will import sensitive
 information that is protected under FERPA (The Family Educational Rights and
 Privacy Act), a detailed discussion of the possible legal and privacy
 implications is necessary if Accelegator is implemented at both Allegheny
 College and other schools, as our software team intends it to be.
 
-    FERPA is a “Federal law that protects the privacy of student education
+FERPA is a “Federal law that protects the privacy of student education
 records. The law applies to all schools that receive funds under an applicable
 program of the U.S. Department of Education.”[1]  This program’s intended use is
 to best serve faculty members who, under FERPA distinction, “Have legitimate
@@ -20,7 +20,7 @@ penetrable program.  Our area of concern lies within the accessibility of
 Accelegator: who receives access to student records, how is access granted, and
 how are students’ rights maintained under FERPA?
 
-    Allegheny College strongly upholds the laws outlined in FERPA.  It complies
+Allegheny College strongly upholds the laws outlined in FERPA.  It complies
 with all established standards and specifically states that, “No one outside the
 College community shall have access to, nor will the College disclose, any
 information from a student’s educational records without the written consent of
@@ -38,7 +38,7 @@ Accelegator, the software team closely abided by the guidelines set forth both
 by Allegheny College and FERPA to assure that students’ rights will continue to
 be protected.
 
-    The characteristic of Accelegator that could most easily be questioned
+The characteristic of Accelegator that could most easily be questioned
 regarding FERPA and Allegheny College’s Privacy Policy is access to students’
 information. Thus, the design of the program is as follows: Each Academic
 Advisor will have access to their advisees’ records.  This is no different than
@@ -51,7 +51,7 @@ records defined by Allegheny College which is then imported into the Accelegator
 program.  As a result, Advisors can easily access and search for student’s
 records, digitalizing and streamlining the advising process.
 
-    As our software team found it most efficient to gather information from
+As our software team found it most efficient to gather information from
 students via a Google Form, we then needed a Google API to be able to access
 this information somewhere in the Accelegator program.  Google offers the
 mechanism called OAuth 2.0 client IDs to create unique identifiers.  This
@@ -67,7 +67,7 @@ private_key_id, private_key, and client_email are found in AGAuthKey.json.  This
 file, AGAuthKey.json, is the file that would be used to give Academic Advisors
 the authorization to see their specific advisees’ information.
 
-    According to OAuth 2.0 Threat Model and Security Considerations,
+According to OAuth 2.0 Threat Model and Security Considerations,
 authorization codes are secure due to their simplicity in authentication of
 clients.[7]  This is not to say that Accelegator cannot be attacked or that the
 program is impenetrable, because the authorization code could be authorized on
