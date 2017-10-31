@@ -17,13 +17,12 @@ def query_show(dataframe, short_email):
     for rowindex in range(0, rows):
         for colindex in range(0, cols):
              if keyword in str(dataframe.iat[rowindex, colindex]):
-
                     email = dataframe.iat[rowindex, EMAIL_INDEX]
                     field = dataframe.iat[0, colindex]
                     response = dataframe.iat[rowindex, TIMESTAMP_INDEX]
-                    latest = _determine_latest(dataframe, email, timestamp, colindex)
-                    timestamp = (datatime, latest)
-
+                    _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX
+                    _latest = _determine_latest(dataframe, email, _datatime, colindex)
+                    timestamp = (_datatime, _latest)
                     retlist.append((timestamp, email, field, response
                     break
     return (email, retlist)
