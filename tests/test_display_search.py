@@ -5,18 +5,33 @@ from display_search import align
 
 def test_display_search_with_latest_timestamp():
     """ Checks display_search() returns correct string if timestamp is latest (should be in negative color) """
-    list = [(("timestamp", True), "keyword", "email", "field", "response")]
-    result = display_search(list)
+    result_tuple = ("keyword", [(("timestamp", True), "email", "field", "response")])
+    result = display_search(result_tuple)
     num_of_spaces = 66
     assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "\x1b[7mtimestamp\x1b[0m\nfield\nresponse\n\n")
 
 
 def test_display_search_with_non_latest_timestamp():
     """ Checks display_search() returns correct string if timestamp is not latest """
-    list = [(("timestamp", False), "keyword", "email", "field", "response")]
-    result = display_search(list)
+    result_tuple = ("keyword", [(("timestamp", False), "email", "field", "response")])
+    result = display_search(result_tuple)
     num_of_spaces = 66
     assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "timestamp\nfield\nresponse\n\n")
+
+
+def test_display_search_with_field_with_empty_tuple():
+    """ Checks if display_search() returns correct string when result_tuple is empty """
+    result_tuple = ()
+    result = display_search(result_tuple)
+
+    assert result == "No results to display"
+
+
+def test_display_search_with_field_with_none_tuple():
+    """ Checks if display_search_with_field() returns correct string when result_tuple is None """
+    result = display_search(None)
+
+    assert result == "No results to display"
 
 
 def test_align_with_negative_timestamp():
