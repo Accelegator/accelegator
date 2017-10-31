@@ -1,5 +1,6 @@
 """ Displays an advisee's flattened responses. """
 import textwrap
+import logging
 from display_search import align
 from colors import bold
 
@@ -19,6 +20,10 @@ def display_show(tuple_of_tuples, has_field = False):
 	field_str = ""
 	timestamp_str= ""
 	string_tuple_of_tuples = ""
+	
+	#immediately leaves if the output is None
+	if tuple_of_tuples is None
+		return "No responses to display"
 	
 	if has_field:
 		initial_string = textwrap.fill("Displaying " + EMAIL_FIELD + "'s results for: " + FIELD_TYPE, 80)

@@ -8,6 +8,11 @@ def test_display_show():
 	string_of_tuples = display_show(tuple_of_tuples)
 	assert repr(string_of_tuples) == repr("Showing all results for: " +  bold("honokak@otonokizaka.edu") + "\n\n" + align("email", "Aug 03 00:00:35 2010") + "\n" + "honokak@otonokizaka.edu")*/
 	
+def test_empty_tuples():
+	"""checks display_show's output if you input an empty tuple_of_tuples"""
+	tuple_of_tuples = ()
+	assert display_show(tuple_of_tuples) == "No responses to display"
+	
 def test_align():
     """ Checks that align() returns properly aligned string """
     aligned = align("honokak@otonokizaka.edu", "Aug 03 00:00:35 2010")
