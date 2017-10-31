@@ -19,6 +19,9 @@ if __name__ == '__main__':
     #DATAFRAME = parse_csv_into_dataframe(CSVFILEPATH)
 
     command = str(input('>>> '))
+    key1 = ""
+    key2 = ""
+    key3 = ""
     defined_commands = {"list", "show", "search", "quit"}
     fSet = frozenset(defined_commands)
     while command != "quit":
@@ -32,5 +35,9 @@ if __name__ == '__main__':
         elif len(keywords) == 3:
             key1 = keywords[1]
             key2 = keywords[2]
-        repl.repl(command, DATAFRAME, key1, key2)
+        elif len(keywords) == 4:
+            key1 = keywords[1]
+            key2 = keywords[2]
+            key3 = keywords[3]
+        repl.repl(command, DATAFRAME, key1, key2, key3)
         command = str(input('>>> '))

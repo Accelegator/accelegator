@@ -1,5 +1,5 @@
 import queries
-def repl(command, DATAFRAME, key1, key2):
+def repl(command, dataframe, key1, key2, key3):
 
     if command == "list":
         queries.query_list(dataframe)
@@ -17,4 +17,4 @@ def repl(command, DATAFRAME, key1, key2):
             queries.query_search_field(dataframe, key1, key2)
 
     if command == "latest":
-        queries.determine_latest(dataframe, key1, key3, key4 )
+        queries.determine_latest(dataframe, key1, key2, key3)
