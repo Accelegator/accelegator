@@ -4,7 +4,7 @@
 import sys
 
 # local dependencies
-from parser import parse_csv_into_dataframe
+from queries import parse_csv_into_dataframe
 from parse_arguments import parse_arguments
 import display_strings
 
