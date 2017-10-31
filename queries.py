@@ -10,12 +10,21 @@ def query_list(dataframe):
 
 def query_show(dataframe, short_email):
     """ returns latest responses for each field for the given student """
+    logging.debug("query_show: " + email)
+    retlist = []
+
+    return (email, retlist)
+    # return: [((timestamp, latest), email, date, latest, field)]
     # return type should be a list of tuples
     # each tuple having format (date, latest, field)
 
 
 def query_show_field(dataframe, field, short_email):
     """ returns all historical responses for the given field and student """
+    logging.debug("query_show_field: " + field + email)
+    
+    (_, retlist) = query_search(dataframe, field, email)
+    return (keyword, field, retlist)
     # return type should be a list of tuples
     # each tuple having format (date, field)
     # sorted such that most recent comes last
