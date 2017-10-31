@@ -4,8 +4,8 @@ import logging
 import pandas
 
 
-EMAIL_INDEX=1
-TIMESTAMP_INDEX=0
+EMAIL_INDEX = 1
+TIMESTAMP_INDEX = 0
 
 
 def parse_csv_into_dataframe(filepath):
@@ -61,10 +61,7 @@ def query_search(dataframe, keyword):
 def query_search_field(dataframe, field, keyword):
     """ returns dataframe rows where the field contains the keyword """
     logging.debug("query_search_field: " + keyword + field)
-
-    # FIXME: trim away the unneeded parts dataframe, without modifying the source
-    # (select EMAIL_INDEX column, field column, TIMESTAMP_INDEX column)
-
-    (_, retlist) = query_search(dataframe, keyword)
+    trimmed_frame = dataframe.iloc[:, [EMAIL_INDEX, TIMESTAMP_INDEX, field]]
+    (_, retlist) = query_search(trimmed_frame, keyword)
     return (keyword, field, retlist)
     # return: (keyword, field, [((timestamp, latest), email, response)])
