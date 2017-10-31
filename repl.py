@@ -11,21 +11,28 @@ def repl(command, dataframe, key1, key2, key3):
 
     if command == "list":
         print(display_list(queries.query_list(dataframe)))
+        return 0
 
     if command == "show":
         if key2 == "":
             print(display_show(queries.query_show(dataframe, key1)))
+            return 1
         else:
             print(display_show_with_field(queries.query_show_field(dataframe, key1, key2)))
+            return 2
 
     if command == "search":
         if key2 == "":
             print(display_search(queries.query_search(dataframe, key1)))
+            return 3
         else:
             print(display_search_with_field(queries.query_search_field(dataframe, key1, key2)))
+            return 4
 
     if command == "help":
         if key1 == "":
-            print(display_help)
+            print(display_help())
+            return 5
         else:
-            print(display_help_with_command)
+            print(display_help_with_command())
+            return 6
