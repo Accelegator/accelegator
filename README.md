@@ -87,15 +87,16 @@ python3 -m pip install --user gspread oauth2client
 ```
 
 Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
-Form, create yes or no questions to measure the capabilities and skills of the
-students that you wish to group.  After you have at least one submission of the
-Form, you can go to the responses tab and click on the green icon with the white
-cross through it.  This will enable you to link the Sheet to the Form.  You can
-either create a new Sheet or link to a preexisting one.  If you need to change
-the destination, you can click on the three dot icon menu to the right of the
-green icon and select "Select response destination".
+Form, create questions that you wish to know about your students. These can be
+multi choice, short answer and yes/no. After you have at least one submission of
+the Form, you can go to the responses tab and click on the green icon with the
+white cross through it.  This will enable you to link the Sheet to the Form.  
+You can either create a new Sheet or link to a pre-existing one.  If you need to
+change the destination, you can click on the three dot icon menu to the right of
+the green icon and select "Select response destination".
 
-Open the `AGAuthKey.json` file which may be distributed to you directly and find the `"client-email:"` section within.
+Open the `AGAuthKey.json` file which may be distributed to you directly and find
+the `"client-email:"` section within.
 Copy the quoted text that looks like an email address.  Return to the Sheet and
 open the sharing options.  Paste the address and click send.  Alternatively, if
 you would like to create your own service account for confidentiality and
