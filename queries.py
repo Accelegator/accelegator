@@ -46,7 +46,7 @@ def query_search(dataframe, keyword):
         for colindex in range(0, cols):
             if keyword in str(dataframe.iat[rowindex, colindex]):
                 email = dataframe.iat[rowindex, EMAIL_INDEX]
-                field = dataframe.iat[0, colindex]
+                field = dataframe.columns[colindex]
                 response = dataframe.iat[rowindex, colindex]
                 _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
                 _latest = _determine_latest(dataframe, email,
@@ -60,7 +60,7 @@ def query_search(dataframe, keyword):
 
 def query_search_field(dataframe, field, keyword):
     """ returns dataframe rows where the field contains the keyword """
-    logging.debug("query_search_field: " + keyword + field)
+    logging.debug("query_search_field: " + keyword + str(field))
     trimmed_frame = dataframe.iloc[:, [EMAIL_INDEX, TIMESTAMP_INDEX, field]]
     (_, retlist) = query_search(trimmed_frame, keyword)
     return (keyword, field, retlist)
