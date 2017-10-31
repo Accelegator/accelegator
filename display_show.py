@@ -7,6 +7,12 @@ from colors import bold
 
 def display_show(tuple_of_tuples, has_field = False):
 
+
+	#immediately leaves if the output is None
+	if not tuple_of_tuples:
+		logging.error("No input was found for tuple_of_tuples")
+		return "No responses to display"
+
 	#CONSTANTS
 	FIELD = 1
 	TIMESTAMP = 0
@@ -20,10 +26,6 @@ def display_show(tuple_of_tuples, has_field = False):
 	field_str = ""
 	timestamp_str= ""
 	string_tuple_of_tuples = ""
-	
-	#immediately leaves if the output is None
-	if tuple_of_tuples is None
-		return "No responses to display"
 	
 	if has_field:
 		initial_string = textwrap.fill("Displaying " + EMAIL_FIELD + "'s results for: " + FIELD_TYPE, 80)
