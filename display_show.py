@@ -51,9 +51,3 @@ def display_show(tuple_of_tuples, has_field = False):
 		string_tuple_of_tuples+="\n \n"
 		
 	return string_tuple_of_tuples
-
-	
-tuple_of_tuples = (("Aug 03 00:00:35 2010", "email", "honokak@otonokizaka.edu"), 
-("Apr 19 00:00:35 2010", "email", "nishikinom@otonokizaka.edu"),
-("Jul 22 00:00:35 2010", "email", "yazawan@otonokizaka.edu"))
-print(display_show(tuple_of_tuples))
