@@ -8,6 +8,7 @@ from parser import parse_csv_into_dataframe
 from parse_arguments import parse_arguments
 import display_strings
 
+
 if __name__ == '__main__':
 
     ARGUMENTS = parse_arguments(sys.argv[1:])
