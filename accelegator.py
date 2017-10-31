@@ -21,7 +21,7 @@ if __name__ == '__main__':
     command = str(input('>>> '))
     key1 = ""
     key2 = ""
-    defined_commands = {"list", "show", "search", "quit"}
+    defined_commands = {"list", "show", "search", "help", "quit"}
     fSet = frozenset(defined_commands)
     while command != "quit":
         keywords = command.rsplit()
