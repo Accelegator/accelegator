@@ -34,6 +34,18 @@ def query_show(dataframe, email):
 
 def query_show_field(dataframe, field, email):
     """ returns all historical responses for the given field and student """
+    response_list = []
+    (rows, _) = dataframe.shapw
+    for rowindex in range(0, rows):
+        if dataframe.iat[rowindex, EMAIL_INDEX] == email:
+            response = dataframe.iat[rowindex, field]
+            _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+            _latest = _determine_latest(dataframe, email,
+                                        _datetime, field)
+            timestamp = (_datetime, _latest)
+            response_list.append(timestamp, response)
+    field = dataframe.columns[field]
+    return (email, field, response_list)
     # return: (email, field, [((timestamp, latest), response)])
 
 
