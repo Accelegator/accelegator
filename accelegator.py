@@ -8,6 +8,7 @@ import sys
 from parse_arguments import parse_arguments
 import display_strings
 import repl
+import write_to_file
 
 if __name__ == '__main__':
 
@@ -21,7 +22,7 @@ if __name__ == '__main__':
     command = str(input('>>> '))
     key1 = ""
     key2 = ""
-    defined_commands = {"list", "show", "search", "help", "quit"}
+    defined_commands = {"list", "show", "search", "write", "help", "quit"}
     fSet = frozenset(defined_commands)
     while command != "quit":
         keywords = command.rsplit()
@@ -34,5 +35,9 @@ if __name__ == '__main__':
         elif len(keywords) == 3:
             key1 = keywords[1]
             key2 = keywords[2]
-        repl.repl(command, DATAFRAME, key1, key2)
+        if command == "write":
+            file_name = str(input('file name: '))
+            write_to_file.write(repl.repl(command, DATAFRAME, key1, key2), file_name)
+        else:
+            repl.repl(command, DATAFRAME, key1, key2)
         command = str(input('>>> '))
