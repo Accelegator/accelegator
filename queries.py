@@ -56,4 +56,12 @@ def query_search_field(dataframe, field, keyword):
 
 def determine_latest(dataframe, short_email, date, field):
     """ returns true if given field is the latest response """
-    # return type should be boolean
+    logging.debug("determine_latest: " + email + date + field)
+    (rows, _) = dataframe.shape
+    for rowindex in range(0, rows):
+        if short_email == dataframe.iat[rowindex, EMAIL_INDEX]:
+            if dataframe.iat[dataframe, TIMESTAMP_INDEX] >= date
+                return False
+    return True
+
+    #FIXME Expecting date type format errors 
