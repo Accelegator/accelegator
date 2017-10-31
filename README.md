@@ -74,6 +74,39 @@ The following data will be collected through a text field.
 
 ## Usage
 
+See the file titled "LegalitiesPrivacy_Accelegator.md" for more details on the
+security and privacy information contained within Accelegator's system.
+
+## First Time Use
+
+Ensure that you have installed gspread and oauth2client installed in the root
+directory of the repository.  In the terminal use the command:
+
+```shell
+python3 -m pip install --user gspread oauth2client
+```
+
+Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
+Form, create yes or no questions to measure the capabilities and skills of the
+students that you wish to group.  After you have at least one submission of the
+Form, you can go to the responses tab and click on the green icon with the white
+cross through it.  This will enable you to link the Sheet to the Form.  You can
+either create a new Sheet or link to a preexisting one.  If you need to change
+the destination, you can click on the three dot icon menu to the right of the
+green icon and select "Select response destination".
+
+Open the `AGAuthKey.json` file which may be distributed to you directly and find the `"client-email:"` section within.
+Copy the quoted text that looks like an email address.  Return to the Sheet and
+open the sharing options.  Paste the address and click send.  Alternatively, if
+you would like to create your own service account for confidentiality and
+security, follow the tutorial found at [www.twilio.com](https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html)
+to create a personal service account.
+
+Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
+Sheet.
+
+---
+
 ### Dependencies
 ```shell
 pip install --user pandas pytest flake8 ansicolors
