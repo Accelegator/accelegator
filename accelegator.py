@@ -21,9 +21,16 @@ if __name__ == '__main__':
     command = str(input('>>> '))
     defined_commands = {"list", "show", "search", "quit"}
     fSet = frozenset(defined_commands)
-    while command not in defined_commands:
-        print("invalid command")
-        command = str(input('>>> '))
     while command != "quit":
-        repl.repl(command)
+        keywords = command.rsplit()
+        while keywords[0] not in defined_commands:
+            print("invalid command")
+            command = str(input('>>> '))
+            keywords = command.rsplit()
+        if len(keywords) == 2:
+            key1 = keywords[1]
+        elif len(keywords) == 3:
+            key1 = keywords[1]
+            key2 = keywords[2]
+        repl.repl(command, key1, key2)
         command = str(input('>>> '))

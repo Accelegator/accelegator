@@ -1,4 +1,4 @@
-def repl(command):
+def repl(command, key1, key2):
 
     if command == "list":
         print("list")
