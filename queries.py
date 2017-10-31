@@ -12,7 +12,20 @@ def query_show(dataframe, short_email):
     """ returns latest responses for each field for the given student """
     logging.debug("query_show: " + email)
     retlist = []
+    
+    (row, cols) = dataframe.shape
+    for rowindex in range(0, rows):
+        for colindex in range(0, cols):
+             if keyword in str(dataframe.iat[rowindex, colindex]):
 
+                    email = dataframe.iat[rowindex, EMAIL_INDEX]
+                    field = dataframe.iat[0, colindex]
+                    response = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+                    latest = _determine_latest(dataframe, email, timestamp, colindex)
+                    timestamp = (datatime, latest)
+
+                    retlist.append((timestamp, email, field, response
+                    break
     return (email, retlist)
     # return: [((timestamp, latest), email, date, latest, field)]
     # return type should be a list of tuples
