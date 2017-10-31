@@ -8,9 +8,6 @@ def test_display_show():
 	("Jul 22 00:00:35 2010", "email", "yazawan@otonokizaka.edu"))
 	string_of_tuples = display_show(tuple_of_tuples)
 	
-	
-	
-	
 def test_align():
     """ Checks that align() returns properly aligned string """
     aligned = align("honokak@otonokizaka.edu", "Aug 03 00:00:35 2010")
