@@ -75,3 +75,4 @@ The following data will be collected through a text field.
 ```shell
 pip install --user pandas
 ```
+[![Coverage Status](https://coveralls.io/repos/github/Accelegator/accelegator/badge.svg?branch=master)](https://coveralls.io/github/Accelegator/accelegator?branch=master)
