@@ -4,7 +4,7 @@
 
 def display_help(help):
 
-    return  "{:<40s}{:<48s}".format("Commands" , "descriptions")+"\n"+
+    return  "{:<40s}{:<48s}".format("Commands" , "descriptions")
             "{:<40s}{:<48s}".format("quit", "exit the program")+"\n"+
             "{:<40s}{:<48s}".format("show <email>" , " display flattened responses for advisee with <email>")+"\n"+
             "{:<40s}{:<48s}".format("help <command>", "descriptions")+"\n"+
