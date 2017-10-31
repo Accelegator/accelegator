@@ -1,21 +1,21 @@
 """ Display verbose description and valid arguments for a command """
 
 # Implementation will be moved to display.py once completed
-
 def display_help_with_command(command):
-    command_strings {
-        "show" : display_help_show
-        "quit" : display_help_quit
-        "show <email>" : display_help_show
-        "help <command>": display_help
-        "help": display_help
-        "show <email> <field>": display_help_show
-        "list": display_list
-        "search <keyword>" : display_search_keyword
-        "search <field> <keyword>" : display_search_keyword
+        command_strings = {
+        "show": display_help_show,
+        "quit": display_help_quit,
+        "show <email>": display_help_show,
+        "help <command>": display_help,
+        "help": display_help,
+        "show <email> <field>": display_help_show,
+        "list": display_list,
+        "search <keyword>" : display_search_keyword,
+        "search <field> <keyword>" : display_search_keyword,
         "write command" : display_write_command
     }
-    return command_string[command]()
+        return command_string[command]()
+
 
 def display_write_command(display_help_with_command):
     header = "write command\n--------"
@@ -38,7 +38,7 @@ def display_search_keyword(display_help_with_command):
     command_one = "search <keyword>"
     command_two = "seach <field> <keyword>"
     description = "can input any of the fields listed below and insert any keyword which would parse through the database for anything matching the keyword or anything close to it"
-    arguments = {"fields can be any of the following"
+    arguments = ["fields can be any of the following"
     "allegheny-email"
     "id"
     "name"
@@ -52,18 +52,18 @@ def display_search_keyword(display_help_with_command):
     "twitter"
     "fav-major-class"
     "fav-nonmajor-class"
-    "career"command_one = "help"
+    "career"
     "academic-interests"
     "personal-interests"
     "tech-strengths"
     "tech-weaknesses"
     "academic-status"
     "personal-status"
-    "advisor-questions"}
+    "advisor-questions"]
 
-return header + format_command_description_show(command_one, command_two, description, arguments)
+    return header + format_command_description_show(command_one, command_two, description, arguments)
 
-def display_help_quit(display_help_with_command): list advisees by emails & shows latest response date
+def display_help_quit(display_help_with_command):
     header = "quit\n----"
     command = "quit"
     description = "Quits the Accelegator program"
@@ -77,29 +77,29 @@ def display_help_show(display_help_with_command):
     command_two = "show <email> <field>"
     description = "Description"
 
-    arguments = {"Advisee's email written without the '@alleghenycommand_one = "help".edu' ending. Ex. 'kimy'
-"fields can be any of the following"
-"allegheny-email"
-"id"
-"name"
-"resume"
-"cover-letter"
-"four-year-plan"
-"grad-year"
-"github"
-"website"
-"linkedin"
-"twitter"
-"fav-major-class"
-"fav-nonmajor-class"
-"career"command_one = "help"
-"academic-interests"
-"personal-interests"
-"tech-strengths"
-"tech-weaknesses"
+    arguments = ["Advisee's email written without the @alleghenycommand_one = help.edu ending. Ex. kimy"
+    "fields can be any of the following"
+    "allegheny-email"
+    "id"
+    "name"
+    "resume"
+    "cover-letter"
+    "four-year-plan"
+    "grad-year"
+    "github"
+    "website"
+    "linkedin"
+    "twitter"
+    "fav-major-class"
+    "fav-nonmajor-class"
+    "career"
+    "academic-interests"
+    "personal-interests"
+    "tech-strengths"
+    "tech-weaknesses"
 "academic-status"
 "personal-status"
-"advisor-questions"}
+"advisor-questions"]
 
     return header + format_command_description_show(command_one, command_two, description, arguments)
 
