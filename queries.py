@@ -6,14 +6,11 @@ import pandas
 def query_list(dataframe):
     """ returns list of emails of the advisees that have responded """
     retlist = []
-    (rows, cols) = dataframe.shape
+    (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
-        for colindex in EMAIL_INDEX:
-            retlist[rows] = rowindex[rows]
-
+        if dataframe.iat[rowindex, EMAIL_INDEX] not in retlist:
+            retlist.append(dataframe.iat[rowindex, EMAIL_INDEX])
     return retlist
-
-    # return type should be a list of strings
 
 
 def query_show(dataframe, short_email):
