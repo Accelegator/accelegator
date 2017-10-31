@@ -88,9 +88,9 @@ python3 -m pip install --user gspread oauth2client
 
 Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
 Form, create questions that you wish to know about your students. These can be
-multiple choice, short answer and yes/no. After you have at least one submission 
+multiple choice, short answer and yes/no. After you have at least one submission
 of the Form, you can go to the responses tab and click on the green icon with
-the white cross through it.  This will enable you to link the Sheet to the Form.  
+the white cross through it.  This will enable you to link the Sheet to the Form.
 You can either create a new Sheet or link to a pre-existing one.  If you need to
 change the destination, you can click on the three dot icon menu to the right of
 the green icon and select "Select response destination".
