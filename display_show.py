@@ -15,12 +15,12 @@ def display_show(tuple_of_tuples, has_field = False):
 
 	#CONSTANTS
 	FIELD = 1
-	TIMESTAMP = 0
-	RESPONSE = 2
+	TIMESTAMP = tuple_of_tuples[2][0][0]
+	RESPONSE = tuple_of_tuples[2][1]
 	EMAIL_INDEX = 2
 	
-	FIRST_RESPONSE = tuple_of_tuples[0]
-	EMAIL_FIELD = bold(FIRST_RESPONSE[EMAIL_INDEX])
+	FIRST_RESPONSE = tuple_of_tuples[2][1]
+	EMAIL_FIELD = tuple_of_tuples[0]
 	FIELD_TYPE = bold(FIRST_RESPONSE[FIELD])
 	
 	field_str = ""
@@ -36,7 +36,10 @@ def display_show(tuple_of_tuples, has_field = False):
 	
 	string_tuple_of_tuples = initial_string
 	
-	#for each tuple in the tuple of tuples, print's out the FIELD, TIMESTAMP, and the RESPONSE given
+	"""Message for code inheriter"""
+	#TODO: Change logic to match new input format:  (email, field, [((timestamp, latest), response)])
+	#Reference: Old input looked like this (("timestamp", "field", "response"), ("timestamp", "field", "response")
+	
 	for tuple in tuple_of_tuples:
 		#textwrap.fill(<data>, 80) will wrap the text in lines of 80 characters.
 		field_str = (str(tuple[FIELD]))
