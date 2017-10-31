@@ -6,32 +6,30 @@ import pandas
 
 def query_list(dataframe):
     """ returns list of emails of the advisees that have responded """
-    # return type should be a list of strings
+    # return: [email, email, ...]
 
 
 def query_show(dataframe, short_email):
     """ returns latest responses for each field for the given student """
-    # return type should be a list of tuples
-    # each tuple having format (date, latest, field)
+    # return: (email, [((timestamp, latest), field, response)])
 
 
 def query_show_field(dataframe, field, short_email):
     """ returns all historical responses for the given field and student """
-    # return type should be a list of tuples
-    # each tuple having format (date, field)
-    # sorted such that most recent comes last
+    # return: (email, field, [((timestamp, latest), response)])
+    # sorted: most recent comes last
 
 
 def query_search(dataframe, keyword):
     """ returns dataframe rows containing the keyword """
-    # return: [((timestamp, latest), keyword, email, field, response)]
+    # return: (keyword, [((timestamp, latest), email, field, response)])
 
 
 def query_search_field(dataframe, field, keyword):
     """ returns dataframe rows where the field contains the keyword """
-    # return: [((timestamp, latest), keyword, email, field, response)]
+    # return: (keyword, field, [((timestamp, latest), email, response)])
 
 
 def determine_latest(dataframe, short_email, date, field):
     """ returns true if given field is the latest response """
-    # return type should be boolean
+    # return: true/false
