@@ -1,10 +1,18 @@
 """ queries supporting the different user commands """
 
 import logging
-
+import pandas
 
 def query_list(dataframe):
     """ returns list of emails of the advisees that have responded """
+    retlist = []
+    (rows, cols) = dataframe.shape
+    for rowindex in range(0, rows):
+        for colindex in EMAIL_INDEX:
+            retlist[rows] = rowindex[rows]
+
+    return retlist
+
     # return type should be a list of strings
 
 
