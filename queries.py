@@ -16,7 +16,7 @@ def parse_csv_into_dataframe(filepath):
     return dataframe
 
 
-def _determine_latest(dataframe, short_email, date, field):
+def _determine_latest(dataframe, email, date, field_index):
     """ returns true if given field is the latest response """
     return True # FIXME
     # return: true/false
@@ -27,12 +27,12 @@ def query_list(dataframe):
     # return: [email, email, ...]
 
 
-def query_show(dataframe, short_email):
+def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
     # return: (email, [((timestamp, latest), field, response)])
 
 
-def query_show_field(dataframe, field, short_email):
+def query_show_field(dataframe, field, email):
     """ returns all historical responses for the given field and student """
     # return: (email, field, [((timestamp, latest), response)])
 
@@ -45,14 +45,13 @@ def query_search(dataframe, keyword):
     for rowindex in range(0, rows):
         for colindex in range(0, cols):
             if keyword in str(dataframe.iat[rowindex, colindex]):
-
                 email = dataframe.iat[rowindex, EMAIL_INDEX]
                 field = dataframe.iat[0, colindex]
                 response = dataframe.iat[rowindex, colindex]
-                datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
-                latest = _determine_latest(dataframe, email, timestamp, colindex)
-                timestamp = (datetime, latest)
-
+                _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+                _latest = _determine_latest(dataframe, email,
+                                            _datetime, colindex)
+                timestamp = (_datetime, _latest)
                 retlist.append((timestamp, email, field, response))
                 break  # stop matching against this row early
     return (keyword, retlist)
