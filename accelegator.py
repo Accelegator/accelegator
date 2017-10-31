@@ -4,9 +4,10 @@
 import sys
 
 # local dependencies
-from parser import parse_csv_into_dataframe
+#from parser import parse_csv_into_dataframe
 from parse_arguments import parse_arguments
 import display_strings
+import repl
 
 if __name__ == '__main__':
 
@@ -15,4 +16,14 @@ if __name__ == '__main__':
 
     # FIXME >> should match CSV filepath written from spreadsheet.py
     CSVFILEPATH = "testing.nocommit.csv"
-    DATAFRAME = parse_csv_into_dataframe(CSVFILEPATH)
+    #DATAFRAME = parse_csv_into_dataframe(CSVFILEPATH)
+
+    command = str(input('>>> '))
+    defined_commands = {"list", "show", "search", "quit"}
+    fSet = frozenset(defined_commands)
+    while command not in defined_commands:
+        print("invalid command")
+        command = str(input('>>> '))
+    while command != "quit":
+        repl.repl(command)
+        command = str(input('>>> '))
