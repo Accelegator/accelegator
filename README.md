@@ -70,8 +70,6 @@ The following data will be collected through a text field.
 - Questions for advisor
   - Do you have any questions for your advisor?
 
-
-
 ## Usage
 
 See the file titled "LegalitiesPrivacy_Accelegator.md" for more details on the
@@ -109,6 +107,9 @@ Sheet.
 ---
 
 ### Dependencies
+
 ```shell
 pip install --user pandas pytest flake8 ansicolors
 ```
+
+[![Coverage Status](https://coveralls.io/repos/github/Accelegator/accelegator/badge.svg?branch=master)](https://coveralls.io/github/Accelegator/accelegator?branch=master)
