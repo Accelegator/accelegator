@@ -24,9 +24,15 @@ def _determine_latest(dataframe, email, date, field_index):
 
 def query_list(dataframe):
     """ returns list of emails of the advisees that have responded """
+    retlist = []
+    (rows, _) = dataframe.shape
+    for rowindex in range(0, rows):
+        if dataframe.iat[rowindex, EMAIL_INDEX] not in retlist:
+            retlist.append(dataframe.iat[rowindex, EMAIL_INDEX])
+    return retlist
     # return: [email, email, ...]
 
-
+    
 def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
     # return: (email, [((timestamp, latest), field, response)])
