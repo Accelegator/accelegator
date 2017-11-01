@@ -41,7 +41,25 @@ def query_list(dataframe):
 
 def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
+    retlist = []
+    (rows, cols) = dataframe.shape
+    for rowindex in range(0, rows):
+        if dataframe.iat[rowindex, EMAIL_INDEX] == email:
+            retlist = []
+            for colindex in range(0, cols):
+                field = dataframe.columns[colindex]
+                response = dataframe.iat[rowindex, colindex]
+                _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+                _latest = _determine_latest(dataframe, email,
+                                            _datetime, colindex)
+                timestamp = (_datetime, _latest)
+                retlist.append((timestamp, field, response))
+    return (email, retlist)
     # return: (email, [((timestamp, latest), field, response)])
+    # FIXME >> should take into account blank/null responses and only return
+    # the latest not-blank/not-null ones for each question/field -- currently
+    # it just assumes all responses were required/mandatory, and assumes the
+    # responses are in temporal sorted order as they are on the Google Sheet.
 
 
 def query_show_field(dataframe, field, email):
