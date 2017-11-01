@@ -1,39 +1,40 @@
 """ Displays a list of commands and their brief descriptions """
 from colors import bold
+import textwrap
 # Implementation will be moved to display.py once completed
+
 
 def display_help():
 
-    tup1 = (bold("Command") , bold("Descriptions"))
-    tup2 = ("quit" ,"exit the program")
-    tup3 = ("show<email>","display flattened responses for advisee with <email>")
-    tup4 = ("help <command>", "list descriptions for said command and show available commands for program")
-    tup5 = ("help","list commands and brief descriptions")
-    tup6 = ("show <email> <field>","display responses for given field, incl. history")
-    tup7 = ("list", "list advisees by emails & show latest response date")
-    tup8 = ("search <keyword>" , "search all fields of all responses of all students fpr keyword " )
-    tup9 = ("search <field> <keyword>","search given of all responses of all students for keyword")
-    tup10 = ("write command", "write command to output to file (prompt for filepath)")
-
-
     commands_list = []
 
-    commands_list.append(tup1)
-    commands_list.append(tup2)
-    commands_list.append(tup3)
-    commands_list.append(tup4)
-    commands_list.append(tup5)
-    commands_list.append(tup6)
-    commands_list.append(tup7)
-    commands_list.append(tup8)
-    commands_list.append(tup9)
-    commands_list.append(tup10)
+    commands_list.append((bold("Command"), bold("Descriptions")))
+    commands_list.append(("help", "list commands and brief descriptions"))
+    commands_list.append(("help <command>", "list descriptions for <command> and show available arguments for <command>"))
+    commands_list.append(("list", "list advisees by emails & show latest response date"))
+    commands_list.append(("show <email>", "display flattened responses for advisee with <email>"))
+    commands_list.append(("show <email> <field>", "display all responses for given field"))
+    commands_list.append(("search <keyword>", "search all fields of all responses of all students for <keyword> "))
+    commands_list.append(("search <field> <keyword>", "search given of all responses of all students for <keyword>"))
+    commands_list.append(("write <command>", "write command to output to file (will prompt for file name)"))
+    commands_list.append(("quit", "exit the program"))
 
     help_string = ""
 
     for current_index, command_tuple in enumerate(commands_list):
-        if current_index == 0:
-            help_string += "{:<40s}{:<56s}".format(command_tuple[0], command_tuple[1])+"\n"
-        else :
-            help_string += "{:<40s}{:<48s}".format(command_tuple[0], command_tuple[1])+"\n"
+        left = command_tuple[0]
+        right = command_tuple[1]
+        if current_index is 0:
+            # accounts for ansi sequence for bolded text in header
+            help_string += "{:<38s}{:<40s}".format(left, right) + "\n"
+        else:
+            right_list = (textwrap.wrap(right, width=40))
+            for current_line, description_line in enumerate(right_list):
+                if current_line is 0:
+                    help_string += "{:<30s}{:<40s}".format(left, description_line) + "\n"
+                else:
+                    empty_space = ""
+                    description_line = "\t" + description_line
+                    help_string += "{:<30s}{:<40s}".format(empty_space, description_line) + "\n"
+
     return help_string
