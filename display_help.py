@@ -1,10 +1,13 @@
 """ Displays a list of commands and their brief descriptions """
 from colors import bold
 import textwrap
+import logging
 # Implementation will be moved to display.py once completed
 
 
 def display_help():
+
+    logging.info("Creating help string")
 
     commands_list = []
 
