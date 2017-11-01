@@ -9,7 +9,8 @@ import queries
 import logging
 import write_to_file
 
-def repl(command, dataframe, key1, key2, key3):
+
+def repl(command, key1, key2, key3, dataframe):
 
     if command == "list":
         print(display_list.display_list(queries.query_list(dataframe)))

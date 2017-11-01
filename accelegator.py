@@ -40,5 +40,5 @@ if __name__ == '__main__':
             key1 = keywords[1]
             key2 = keywords[2]
             key3 = keywords[3]
-        repl.repl(command, command, key1, key2, key3)
+        repl.repl(command, key1, key2, key3, DATAFRAME)
         command = str(input('>>> '))
