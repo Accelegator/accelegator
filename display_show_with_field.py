@@ -8,7 +8,7 @@ from colors import negative
 def display_show_with_field(result_tuple):
     """ Returns a string with an advisee's past and current responses to a given field. Input is in form: (email, field, [((timestamp, latest), response)])"""
 
-    if not result_tuple:
+    if result_tuple is None or result_tuple is ():
         logging.error("No input tuple given")
         return "No responses to display"
 
