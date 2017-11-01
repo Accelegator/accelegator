@@ -30,6 +30,7 @@ def _determine_latest(dataframe, email, date, field_index):
 
 def query_list(dataframe):
     """ returns list of emails of the advisees that have responded """
+    logging.debug("query_list")
     retlist = []
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
@@ -41,6 +42,7 @@ def query_list(dataframe):
 
 def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
+    logging.debug("query_show: " + email)
     retlist = []
     (rows, cols) = dataframe.shape
     for rowindex in range(0, rows):
@@ -64,6 +66,7 @@ def query_show(dataframe, email):
 
 def query_show_field(dataframe, field, email):
     """ returns all historical responses for the given field and student """
+    logging.debug("query_show_field: " + str(field) + email)
     response_list = []
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
