@@ -32,7 +32,7 @@ def query_list(dataframe):
     return retlist
     # return: [email, email, ...]
 
-    
+
 def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
     # return: (email, [((timestamp, latest), field, response)])
