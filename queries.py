@@ -18,14 +18,14 @@ def parse_csv_into_dataframe(filepath):
 
 def _determine_latest(dataframe, email, date, field_index):
     """ returns true if given field is the latest response """
-    logging.debug("determine_latest: " + email + date + field)
-    (rows, _) = dataframe.shape
-    for rowindex in range(0, rows):
-        if short_email == dataframe.iat[rowindex, EMAIL_INDEX]:
-            if dataframe.iat[dataframe, TIMESTAMP_INDEX] >= date
-                return False
+    # logging.debug("determine_latest: " + email + date + field)
+    # (rows, _) = dataframe.shape
+    # for rowindex in range(0, rows):
+    #     if short_email == dataframe.iat[rowindex, EMAIL_INDEX]:
+    #         if dataframe.iat[dataframe, TIMESTAMP_INDEX] >= date
+    #             return False
     return True
-    # FIXME >> expecting type errors here
+    # FIXME >> broken.
 
 
 def query_list(dataframe):
