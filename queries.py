@@ -73,7 +73,11 @@ def query_search(dataframe, keyword):
 def query_search_field(dataframe, field, keyword):
     """ returns dataframe rows where the field contains the keyword """
     logging.debug("query_search_field: " + keyword + str(field))
-    trimmed_frame = dataframe.iloc[:, [EMAIL_INDEX, TIMESTAMP_INDEX, field]]
+    trimmed_frame = dataframe.iloc[:, [TIMESTAMP_INDEX, EMAIL_INDEX, field]]
     (_, retlist) = query_search(trimmed_frame, keyword)
-    return (keyword, field, retlist)
+    returnlist = []
+    for ret in retlist:
+        (timestamp, email, _, response) = ret
+        returnlist.append((timestamp, email, response))
+    return (keyword, field, returnlist)
     # return: (keyword, field, [((timestamp, latest), email, response)])
