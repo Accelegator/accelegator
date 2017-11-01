@@ -1,4 +1,4 @@
-""" Displays a list of commands and their brief descriptions """
+""" Returns a string with a list of commands and their brief descriptions """
 
 from colors import bold
 import textwrap
