@@ -3,10 +3,12 @@
 import argparse
 import logging
 
+
 def parse_arguments(args):
     """ Parses command-line arguments """
 
-    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
         "-d",
