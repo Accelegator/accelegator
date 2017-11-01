@@ -11,16 +11,16 @@ def display_help():
 
     commands_list = []
 
-    commands_list.append((bold("Command"), bold("Descriptions")))
-    commands_list.append(("help", "list commands and brief descriptions"))
-    commands_list.append(("help <command>", "list verbose description of <command> and show available arguments for <command>"))
-    commands_list.append(("list", "list emails of all advisees"))
-    commands_list.append(("show <email>", "display flattened responses for advisee with <email>"))
-    commands_list.append(("show <email> <field>", "display all responses for advisee with <email> given <field>"))
-    commands_list.append(("search <keyword>", "search all fields of all responses of all students for <keyword> "))
-    commands_list.append(("search <field> <keyword>", "search given <field> of all responses of all students for <keyword>"))
-    commands_list.append(("write <command>", "write <command> output to file (will prompt for file name)"))
-    commands_list.append(("quit", "exit the program"))
+    commands_list.append((bold("Command"), bold("Description")))
+    commands_list.append(("help", "List commands and brief descriptions"))
+    commands_list.append(("help <command>", "List verbose description of <command> and show available arguments for <command>"))
+    commands_list.append(("list", "List emails of all advisees"))
+    commands_list.append(("show <email>", "Display flattened responses for advisee with <email>"))
+    commands_list.append(("show <email> <field>", "Display all responses for advisee with <email> given <field>"))
+    commands_list.append(("search <keyword>", "Search all fields of all responses of all students for <keyword> "))
+    commands_list.append(("search <field> <keyword>", "Search given <field> of all responses of all students for <keyword>"))
+    commands_list.append(("write <command>", "Write <command> output to file (will prompt for file name)"))
+    commands_list.append(("quit", "Exit the program"))
 
     help_string = ""
 
