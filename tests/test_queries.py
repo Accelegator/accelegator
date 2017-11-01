@@ -49,13 +49,26 @@ def test_query_search_field_nomatch():
     assert actual == expected
 
 
-# def test_query_show_field():
-#     """ verify single field with historical data is returned """
+def test_query_show_field():
+    """ verify single field with historical data is returned """
+    actual = queries.query_show_field(DATAFRAME, 3, "rewq")
+    expected = ("rewq", "field2col", [(("qwer", True), "rtyu")])
+    assert actual == expected
 
 
-# def test_query_show():
-#     """ verify all fields for given student are returned """
+def test_query_show():
+    """ verify all fields for given student are returned """
+    actual = queries.query_show(DATAFRAME, "rewq")
+    expected = ("rewq", [
+        (("qwer", True), "timestampcol", "qwer"),
+        (("qwer", True), "emailcol", "rewq"),
+        (("qwer", True), "field1col", "uytr"),
+        (("qwer", True), "field2col", "rtyu")])
+    assert actual == expected
 
 
-# def test_query_list():
-#     """ verify all students are returned, identified by email """
+def test_query_list():
+    """ verify all students are returned, identified by email """
+    actual = queries.query_list(DATAFRAME)
+    expected = ["fdsa", "rewq", "uiop"]
+    assert actual == expected
