@@ -9,7 +9,7 @@ from colors import negative
 def display_show(result_tuple):
     """ Returns string with an advisee's flattened responses. Input is in form: (email, [((timestamp, latest), field, response)]) """
 
-    if not result_tuple:
+    if result_tuple is None or result_tuple is ():
         logging.error("No input tuple given")
         return "No responses to display"
 
