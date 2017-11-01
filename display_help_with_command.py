@@ -1,4 +1,4 @@
-""" Display verbose description and valid arguments for a command """
+""" Returns a string with verbose description and valid arguments for a command """
 
 # Implementation will be moved to display.py once completed
 from colors import bold
