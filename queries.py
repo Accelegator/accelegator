@@ -18,7 +18,7 @@ def parse_csv_into_dataframe(filepath):
 
 def _determine_latest(dataframe, email, date, field_index):
     """ returns true if given field is the latest response """
-    return True # FIXME
+    return True  # FIXME
     # return: true/false
 
 
