@@ -22,10 +22,10 @@ def display_show(result_tuple):
     FIELD_INDEX = 1
     RESPONSE_INDEX = 2
 
-    result = textwrap.fill("Showing flattened responses for advisee with email " + bold(str(result_tuple[EMAIL_INDEX])), 80) + "\n"
+    result = textwrap.fill("Showing flattened responses for advisee with email " + bold(str(result_tuple[EMAIL_INDEX])), 80) + "\n\n"
 
     for response in result_tuple[RESPONSE_LIST_INDEX]:
-        field = (str(response[FIELD_INDEX]))
+        field = str(response[FIELD_INDEX])
         timestamp_tuple = response[TIMESTAMP_INDEX]
         timestamp_latest = timestamp_tuple[TIMESTAMP_LATEST_INDEX]
         timestamp = negative(str(timestamp_tuple[TIMESTAMP_STR_INDEX])) if timestamp_latest else str(timestamp_tuple[TIMESTAMP_STR_INDEX])
