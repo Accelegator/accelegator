@@ -7,7 +7,6 @@ import logging
 from colors import negative
 from colors import bold
 
-
 def display_search(result_tuple, has_field=False):
     """ Returns string of list of advisees with responses that match search
         query. result_tuple takes on the form:

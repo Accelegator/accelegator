@@ -1,0 +1,31 @@
+TUPLE_OF_TUPLES_DISPLAY_SHOW =  ( ("timestamp", "allegheny-email", "response"),
+                                  ("timestamp", "id", "response"),
+                                  ("timestamp", "name", "response"),
+                                  ("timestamp", "resume", "response"),
+                                  ("timestamp", "cover-letter", "response"),
+                                  ("timestamp", "four-year-plan", "response"),
+                                  ("timestamp", "grad-year", "response"),
+                                  ("timestamp", "github", "response"),
+                                  ("timestamp", "website", "response"),
+                                  ("timestamp", "linkedin", "response"),
+                                  ("timestamp", "twitter", "response"),
+                                  ("timestamp", "fav-major-class", "response"),
+                                  ("timestamp", "fav-nonmajor-class", "response"),
+                                  ("timestamp", "career", "response"),
+                                  ("timestamp", "academic-interests", "response"),
+                                  ("timestamp", "personal-interests", "response"),
+                                  ("timestamp", "tech-strengths", "response"),
+                                  ("timestamp", "tech-weaknesses", "response"),
+                                  ("timestamp", "academic-status", "response"),
+                                  ("timestamp", "personal-status", "response"),
+                                  ("timestamp", "advisor-questions", "response")
+                                )
+
+TUPLES_OF_TUPLES_DISPLAY_SHOW_WITH_FIELD = (  ("timestamp", "allegheny-email", "response"),
+                                              ("timestamp", "academic-interests", "response"),
+                                              ("timestamp", "academic-interests", "response"),
+                                              ("timestamp", "academic-interests", "response"),
+                                              ("timestamp", "academic-interests", "response"),
+                                              ("timestamp", "academic-interests", "response"),
+                                              ("timestamp", "academic-interests", "response")
+                                            )
