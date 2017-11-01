@@ -75,7 +75,7 @@ The following data will be collected through a text field.
 ### Dependencies
 
 ```shell
-pip3 install --user pandas pytest flake8 ansicolors
+pip3 install --user pandas pytest flake8 ansicolors python-dateutil
 ```
 
 [![Coverage Status](https://coveralls.io/repos/github/Accelegator/accelegator/badge.svg?branch=master)](https://coveralls.io/github/Accelegator/accelegator?branch=master)

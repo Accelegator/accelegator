@@ -2,6 +2,7 @@
 
 import logging
 import pandas
+from dateutil.parser import parse
 
 
 EMAIL_INDEX = 1
@@ -16,16 +17,15 @@ def parse_csv_into_dataframe(filepath):
     return dataframe
 
 
-def _determine_latest(dataframe, email, date, field_index):
+def _determine_latest(dataframe, email, date, field):
     """ returns true if given field is the latest response """
-    # logging.debug("determine_latest: " + email + date + field)
-    # (rows, _) = dataframe.shape
-    # for rowindex in range(0, rows):
-    #     if short_email == dataframe.iat[rowindex, EMAIL_INDEX]:
-    #         if dataframe.iat[dataframe, TIMESTAMP_INDEX] >= date
-    #             return False
+    logging.debug("determine_latest: " + email + date + str(field))
+    (rows, _) = dataframe.shape
+    for rowindex in range(0, rows):
+        if email == dataframe.iat[rowindex, EMAIL_INDEX]:
+            if parse(dataframe.iat[dataframe, TIMESTAMP_INDEX]) > parse(date):
+                return False
     return True
-    # FIXME >> broken.
 
 
 def query_list(dataframe):
