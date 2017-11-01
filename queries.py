@@ -23,7 +23,8 @@ def _determine_latest(dataframe, email, date, field):
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
         if email == dataframe.iat[rowindex, EMAIL_INDEX]:
-            if parse(dataframe.iat[dataframe, TIMESTAMP_INDEX]) > parse(date):
+            candidate = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+            if parse(candidate) > parse(date):
                 return False
     return True
 
