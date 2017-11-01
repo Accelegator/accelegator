@@ -1,60 +1,22 @@
 """ queries supporting the different user commands """
 
 import logging
+import pandas
 
 
-def query_list(dataframe):
-    """ returns list of emails of the advisees that have responded """
-    # return type should be a list of strings
+EMAIL_INDEX = 1
+TIMESTAMP_INDEX = 0
 
 
-def query_show(dataframe, short_email):
-    """ returns latest responses for each field for the given student """
-    logging.debug("query_show: " + email)
-    retlist = []
-    
-    (row, cols) = dataframe.shape
-    for rowindex in range(0, rows):
-        for colindex in range(0, cols):
-             if keyword in str(dataframe.iat[rowindex, colindex]):
-                    email = dataframe.iat[rowindex, EMAIL_INDEX]
-                    field = dataframe.iat[0, colindex]
-                    response = dataframe.iat[rowindex, TIMESTAMP_INDEX]
-                    _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX
-                    _latest = _determine_latest(dataframe, email, _datatime, colindex)
-                    timestamp = (_datatime, _latest)
-                    retlist.append((timestamp, email, field, response
-                    break
-    return (email, retlist)
-    # return: [((timestamp, latest), email, date, latest, field)]
-    # return type should be a list of tuples
-    # each tuple having format (date, latest, field)
+def parse_csv_into_dataframe(filepath):
+    """ parses csv file into an pandas dataframe """
+    dataframe = pandas.read_csv(filepath)
+    logging.debug("generated pandas dataframe:")
+    logging.debug(dataframe)
+    return dataframe
 
 
-def query_show_field(dataframe, field, short_email):
-    """ returns all historical responses for the given field and student """
-    logging.debug("query_show_field: " + field + email)
-    
-    (_, retlist) = query_search(dataframe, field, email)
-    return (keyword, field, retlist)
-    # return type should be a list of tuples
-    # each tuple having format (date, field)
-    # sorted such that most recent comes last
-
-
-def query_search(dataframe, keyword):
-    """ returns dataframe rows containing the keyword """
-    # return type should be a list of tuples
-    # each tuple having format (email, field_name, field_content)
-
-
-def query_search_field(dataframe, field, keyword):
-    """ returns dataframe rows where the field contains the keyword """
-    # return type should be a list of tuples
-    # each tuple having format (email, field_name, field_content)
-
-
-def determine_latest(dataframe, short_email, date, field):
+def _determine_latest(dataframe, email, date, field_index):
     """ returns true if given field is the latest response """
     logging.debug("determine_latest: " + email + date + field)
     (rows, _) = dataframe.shape
@@ -63,5 +25,71 @@ def determine_latest(dataframe, short_email, date, field):
             if dataframe.iat[dataframe, TIMESTAMP_INDEX] >= date
                 return False
     return True
+    # FIXME >> expecting type errors here
 
-    #FIXME Expecting date type format errors 
+
+def query_list(dataframe):
+    """ returns list of emails of the advisees that have responded """
+    retlist = []
+    (rows, _) = dataframe.shape
+    for rowindex in range(0, rows):
+        if dataframe.iat[rowindex, EMAIL_INDEX] not in retlist:
+            retlist.append(dataframe.iat[rowindex, EMAIL_INDEX])
+    return retlist
+    # return: [email, email, ...]
+
+
+def query_show(dataframe, email):
+    """ returns latest responses for each field for the given student """
+    # return: (email, [((timestamp, latest), field, response)])
+
+
+def query_show_field(dataframe, field, email):
+    """ returns all historical responses for the given field and student """
+    response_list = []
+    (rows, _) = dataframe.shape
+    for rowindex in range(0, rows):
+        if dataframe.iat[rowindex, EMAIL_INDEX] == email:
+            response = dataframe.iat[rowindex, field]
+            _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+            _latest = _determine_latest(dataframe, email,
+                                        _datetime, field)
+            timestamp = (_datetime, _latest)
+            response_list.append((timestamp, response))
+    field = dataframe.columns[field]
+    return (email, field, response_list)
+    # return: (email, field, [((timestamp, latest), response)])
+
+
+def query_search(dataframe, keyword):
+    """ returns dataframe rows containing the keyword """
+    logging.debug("query_search: " + keyword)
+    retlist = []
+    (rows, cols) = dataframe.shape
+    for rowindex in range(0, rows):
+        for colindex in range(0, cols):
+            if keyword in str(dataframe.iat[rowindex, colindex]):
+                email = dataframe.iat[rowindex, EMAIL_INDEX]
+                field = dataframe.columns[colindex]
+                response = dataframe.iat[rowindex, colindex]
+                _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
+                _latest = _determine_latest(dataframe, email,
+                                            _datetime, colindex)
+                timestamp = (_datetime, _latest)
+                retlist.append((timestamp, email, field, response))
+                break  # stop matching against this row early
+    return (keyword, retlist)
+    # return: (keyword, [((timestamp, latest), email, field, response)])
+
+
+def query_search_field(dataframe, field, keyword):
+    """ returns dataframe rows where the field contains the keyword """
+    logging.debug("query_search_field: " + keyword + str(field))
+    trimmed_frame = dataframe.iloc[:, [TIMESTAMP_INDEX, EMAIL_INDEX, field]]
+    (_, retlist) = query_search(trimmed_frame, keyword)
+    returnlist = []
+    for ret in retlist:
+        (timestamp, email, _, response) = ret
+        returnlist.append((timestamp, email, response))
+    return (keyword, field, returnlist)
+    # return: (keyword, field, [((timestamp, latest), email, response)])
