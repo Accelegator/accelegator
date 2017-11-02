@@ -1,12 +1,7 @@
 """ Takes the call numbers and routes them to commands """
 
-
 import logging
-import display_list
-import display_show
-import display_show_with_field
-import display_search
-import display_search_with_field
+import display
 import queries
 import write_to_file
 
@@ -14,23 +9,23 @@ import write_to_file
 def repl(command, arg1, arg2, arg3, dataframe, call):
 
     if call == 1:
-        print(display_list.display_list(queries.query_list(dataframe)))
+        print(display.display_list(queries.query_list(dataframe)))
         logging.debug("calling query and display for " + command)
 
     elif call == 2:
-        print(display_show.display_show(queries.query_show(dataframe, arg1)))
+        print(display.display_show(queries.query_show(dataframe, arg1)))
         logging.debug("calling query and display for " + command + " with arg " + arg1)
 
     elif call == 3:
-        print(display_show_with_field.display_show_with_field(queries.query_show_field(dataframe, arg1, arg2)))
+        print(display.display_show_with_field(queries.query_show_field(dataframe, arg1, arg2)))
         logging.debug("calling query and display for " + command + " with args " + arg1 + ", " + arg2)
 
     elif call == 4:
-        print(display_search.display_search(queries.query_search(dataframe, arg1)))
+        print(display.display_search(queries.query_search(dataframe, arg1)))
         logging.debug("calling query and display for " + command + " with arg " + arg1)
 
     elif call == 5:
-        print(display_search_with_field.display_search_with_field(queries.query_search_field(dataframe, arg1, arg2)))
+        print(display.display_search_with_field(queries.query_search_field(dataframe, arg1, arg2)))
         logging.debug("calling query and display for " + command + " with args " + arg1 + ", " + arg2)
 
     elif call == 6:
@@ -64,9 +59,9 @@ def repl(command, arg1, arg2, arg3, dataframe, call):
         write_to_file.write(data, file_name)
 
     elif call == 11:
-        print(display_help.display_help())
+        print(display.display_help())
         logging.debug("calling query and display for " + command)
 
     elif call == 12:
-        print(display_help_with_command.display_help_with_command())
+        print(display.display_help_with_command())
         logging.debug("calling query and display for " + command)
