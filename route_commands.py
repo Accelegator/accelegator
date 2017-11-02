@@ -19,13 +19,12 @@ def route_commands(command, arg1, arg2):
             call = 5
 
     if command == "write":
-
         call = 6
 
     if command == "help":
         if arg1 == "":
-            call = 11
+            call = 7
         else:
-            call = 12
+            call = 8
 
     return call
