@@ -30,7 +30,7 @@ def test_route_commands_5():
 
 def test_route_commands_8():
     """ Test write list """
-    assert route_commands.route_commands("write", "list", "")s == 6
+    assert route_commands.route_commands("write", "list", "") == 6
 
 
 def test_route_commands_6():
