@@ -50,13 +50,13 @@ def display_show_help():
     header = "show\n----"
     command_one = "show <emai>"
     description_one = "Display flattened (i.e. the latest response for each field) responses for advisee with <email>"
-    arguments_one = "<email>: Email of advisee. Do not include \"@allegheny.edu\""
+    arguments_one = "<email>: Email of advisee. Include \"@allegheny.edu\""
     command_one_tuple = (header, command_one, description_one, arguments_one)
     logging.debug("Command one details: " + str(command_one_tuple))
 
     command_two = "show <email> <field>"
     description_two = "Display all responses for advisee with <email> for given <field>. Will show all previous and latest responses."
-    arguments_two = "<email>: Email of advisee. Do not include \"@allegheny.edu\"\n<field>: Can be any of the following\n\tallegheny-email\n\tid\n\tname\n\tresume\n\tcover-letter\n\tfour-year-plan\n\tgrad-year\n\tgithub\n\twebsite\n\tlinkedin\n\ttwitter\n\tfav-major-class\n\tfav-nonmajor-class\n\tcareer\n\tacademic-interests\n\tpersonal-interests\n\ttech-strengths\n\ttech-weaknesses\n\tacademic-status\n\tpersonal-status\n\tadvisor-questions"
+    arguments_two = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\tallegheny-email\n\tid\n\tname\n\tresume\n\tcover-letter\n\tfour-year-plan\n\tgrad-year\n\tgithub\n\twebsite\n\tlinkedin\n\ttwitter\n\tfav-major-class\n\tfav-nonmajor-class\n\tcareer\n\tacademic-interests\n\tpersonal-interests\n\ttech-strengths\n\ttech-weaknesses\n\tacademic-status\n\tpersonal-status\n\tadvisor-questions"
     command_two_tuple = (command_two, description_two, arguments_two)
     logging.debug("Command two details: " + str(command_two_tuple))
 
@@ -190,10 +190,10 @@ def display_search(result_tuple, has_field=False):
 
     if result_tuple is None:
         logging.error("result_tuple parameter is None")
-        return "No results to display"
+        return "No input tuple given"
     if result_tuple is ():
         logging.error("result_tuple is empty")
-        return "No results to display"
+        return "No input tuple given"
 
     KEYWORD = bold(result_tuple[KEYWORD_INDEX])
     if has_field:
@@ -203,7 +203,13 @@ def display_search(result_tuple, has_field=False):
     else:
         result = "Displaying search results for keyword " + KEYWORD + "\n\n"
 
-    for response_tuple in result_tuple[RESPONSE_LIST_INDEX]:
+    response_list = result_tuple[RESPONSE_LIST_INDEX]
+
+    if not response_list:
+        logging.error("No search results")
+        return result + "No responses to display"
+
+    for response_tuple in response_list:
         timestamp_tuple = response_tuple[TIMESTAMP_TUPLE_INDEX]
         timestamp_latest = timestamp_tuple[TIMESTAMP_LATEST_INDEX]
 
@@ -254,7 +260,7 @@ def display_show(result_tuple):
 
     if result_tuple is None or result_tuple is ():
         logging.error("No input tuple given")
-        return "No responses to display"
+        return "No tuple exists"
 
     EMAIL_INDEX = 0
     RESPONSE_LIST_INDEX = 1
@@ -267,15 +273,21 @@ def display_show(result_tuple):
 
     result = textwrap.fill("Showing flattened responses for advisee with email " + bold(str(result_tuple[EMAIL_INDEX])), 80) + "\n\n"
 
-    for response in result_tuple[RESPONSE_LIST_INDEX]:
+    response_list = result_tuple[RESPONSE_LIST_INDEX]
+
+    if not response_list:
+        logging.error("No search results")
+        return result + "No responses to display"
+
+    for response in response_list:
         field = str(response[FIELD_INDEX])
         timestamp_tuple = response[TIMESTAMP_INDEX]
         timestamp_latest = timestamp_tuple[TIMESTAMP_LATEST_INDEX]
         timestamp = negative(str(timestamp_tuple[TIMESTAMP_STR_INDEX])) if timestamp_latest else str(timestamp_tuple[TIMESTAMP_STR_INDEX])
         response_string = str(response[RESPONSE_INDEX])
-        result += display_search.align(field, timestamp) + "\n"
+        result += align(field, timestamp) + "\n"
 
-        result += textwrap.fill(response_string, width=80) + "\n"
+        result += textwrap.fill(response_string, width=80) + "\n\n"
 
     return result
 

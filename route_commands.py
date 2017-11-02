@@ -1,7 +1,7 @@
 """ Routes commands to the REPL """
 
 
-def route_commands(command, arg1, arg2, arg3):
+def route_commands(command, arg1, arg2):
 
     if command == "list":
         call = 1
@@ -20,20 +20,7 @@ def route_commands(command, arg1, arg2, arg3):
 
     if command == "write":
 
-        if arg1 == "list":
-            call = 6
-
-        elif arg1 == "show":
-            if arg3 == "":
-                call = 7
-            else:
-                call = 8
-
-        elif arg1 == "search":
-            if arg3 == "":
-                call = 9
-            else:
-                call = 10
+        call = 6
 
     if command == "help":
         if arg1 == "":

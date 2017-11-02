@@ -10,6 +10,8 @@ from defaults import DEFAULT_CSVFILE
 from spreadsheet import create_csv
 import repl
 import route_commands
+import write_to_file
+import logging
 
 
 if __name__ == '__main__':
@@ -18,7 +20,6 @@ if __name__ == '__main__':
     print(display_strings.WELCOME)
     create_csv()
 
-    # FIXME >> should match CSV filepath written from spreadsheet.py
     DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
 
     command = str(input('>>> '))
@@ -33,7 +34,7 @@ if __name__ == '__main__':
         args = command.rsplit()
         command = args[0]
         while args[0] not in defined_commands:
-            print("invalid command")
+            print("Invalid command. Type \"help\" to see list of valid commands.")
             command = str(input('>>> '))
             args = command.rsplit()
             command = args[0]
@@ -46,6 +47,18 @@ if __name__ == '__main__':
             arg1 = args[1]
             arg2 = args[2]
             arg3 = args[3]
-        call = route_commands.route_commands(command, arg1, arg2, arg3)
-        repl.repl(command, arg1, arg2, arg3, DATAFRAME, call)
+        call = route_commands.route_commands(command, arg1, arg2)
+        output = repl.repl(DATAFRAME, call, arg1, arg2, arg3)
+        if (call == 6):
+            inner_call = route_commands.route_commands(arg1, arg2, arg3)
+            output = repl.repl(DATAFRAME, inner_call, arg1, arg2, arg3)
+            file_name = str(input('File to write to: '))
+            logging.info("Writing to file: " + file_name)
+            write_to_file.write(output, file_name)
+        else:
+            print(output)
+
+        arg1 = ""
+        arg2 = ""
+        arg3 = ""
         command = str(input('>>> '))
