@@ -23,15 +23,11 @@ def create_csv():
     sheet = client.open(DEFAULT_WORKBOOK).sheet1
 
     # Extract and print all of the values
-    list_of_hashes = sheet.get_all_records()
-
-    #FIXME>> Iterates through the list_of_hashes and creates a csv with the
-    #format {question, answer, question, answer...}per student's response.
-    #should instead give {question, question, question, ..} and then
-    #{answer, answer, answer...} for each student.
+    list_of_hashes = sheet.get_all_values()
 
     logging.info("Writing formatted data to CSV file")
     logging.debug("CSV file name: " + file_name)
     with open(file_name, 'w') as myfile:
         writer = csv.writer(myfile, quoting=csv.QUOTE_ALL)
-        writer.writerow([list_of_hashes])
+        for ha in list_of_hashes:
+            writer.writerow(ha)
