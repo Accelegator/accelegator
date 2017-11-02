@@ -1,18 +1,20 @@
-""" Returns string of list of advisees with responses that match search query. """
+""" Returns string of list of advisees with responses
+    that match search query. """
 # Implementation will be moved to display.py once completed
 
 # external dependencies
+import logging
 from colors import negative
 from colors import bold
-import logging
-
 
 def display_search(result_tuple, has_field=False):
-    """ Returns string of list of advisees with responses that match search query. result_tuple takes on the form: (keyword, [((timestamp, latest), email, field, response)]) """
+    """ Returns string of list of advisees with responses that match search
+        query. result_tuple takes on the form:
+        (keyword, [((timestamp, latest), email, field, response)]) """
     KEYWORD_INDEX = 0
 
-    # result_tuple differs based on whether it is returned by the query_search
-    # or query_search_with_field function
+    # result_tuple differs based on whether it is returned by the
+    # query_search or query_search_with_field function
     RESPONSE_LIST_INDEX = 2 if has_field else 1
     FIELD_INDEX = 1 if has_field else 2
     RESPONSE_INDEX = 2 if has_field else 3

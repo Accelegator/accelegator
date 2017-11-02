@@ -2,7 +2,7 @@
 
 
 def write(data, file_name):
-
+    """ writes the provided data to the given filepath """
     stored_file = open(file_name, 'a')
     stored_file.write("%s\n" % (data))
-    stored_file.close
+    stored_file.close()

@@ -1,12 +1,13 @@
 """ Takes the call numbers and routes them to commands """
 
+
+import logging
 import display_list
 import display_show
 import display_show_with_field
 import display_search
 import display_search_with_field
 import queries
-import logging
 import write_to_file
 
 
