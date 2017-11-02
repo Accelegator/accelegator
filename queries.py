@@ -65,9 +65,9 @@ def query_show(dataframe, email):
     # responses are in temporal sorted order as they are on the Google Sheet.
 
 
-def query_show_field(dataframe, field, email):
+def query_show_field(dataframe, email, field):
     """ returns all historical responses for the given field and student """
-    logging.debug("query_show_field: " + str(field) + email)
+    logging.debug("query_show_field: " + str(field) + " " + str(email))
     response_list = []
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):

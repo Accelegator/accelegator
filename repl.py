@@ -1,66 +1,36 @@
-""" Takes the commands entered in the REPL and maps them to tasks """
-
+""" Takes the call numbers and routes them to commands """
 
 import logging
-import display_list
-import display_show
-import display_show_with_field
-import display_search
-import display_search_with_field
+import display
 import queries
-import write_to_file
 
 
-def repl(command, dataframe, key1, key2, key3):
+def repl(dataframe, call, command, arg1, arg2):
 
-    if command == "list":
-        print(display_list(queries.query_list(dataframe)))
-        logging.info("calling query and display for " + command)
-        return 0
+    if call == 1:
+        return display.display_list(queries.query_list(dataframe))
+        logging.debug("calling query and display for " + command)
 
-    if command == "show":
-        if key2 == "":
-            print(display_show(queries.query_show(dataframe, key1)))
-            logging.info("calling query and display for " + command + " with key " + key1)
-            return 1
-        print(display_show_with_field(queries.query_show_field(dataframe, key1, key2)))
-        logging.info("calling query and display for " + command + " with keys " + key1 + ", " + key2)
-        return 2
+    elif call == 2:
+        return display.display_show(queries.query_show(dataframe, arg1))
+        logging.debug("calling query and display for " + command + " with arg " + arg1)
 
-    if command == "search":
-        if key2 == "":
-            print(display_search(queries.query_search(dataframe, key1)))
-            logging.info("calling query and display for " + command + " with key " + key1)
-            return 3
-        print(display_search_with_field(queries.query_search_field(dataframe, key1, key2)))
-        logging.info("calling query and display for " + command + " with keys " + key1 + ", " + key2)
-        return 4
+    elif call == 3:
+        return display.display_show_with_field(queries.query_show_field(dataframe, arg1, int(arg2)))
+        logging.debug("calling query and display for " + command + " with args " + arg1 + ", " + arg2)
 
-    if command == "write":
+    elif call == 4:
+        return (display.display_search(queries.query_search(dataframe, arg1)))
+        logging.debug("calling query and display for " + command + " with arg " + arg1)
 
-        if key1 == "list":
-            data = queries.query_list(dataframe)
+    elif call == 5:
+        return display.display_search_with_field(queries.query_search_field(dataframe, int(arg1), arg2))
+        logging.debug("calling query and display for " + command + " with args " + arg1 + ", " + arg2)
 
-        elif key1 == "show":
-            if key3 == "":
-                data = queries.query_show(dataframe, key2)
-            else:
-                data = queries.query_show_field(dataframe, key2, key3)
+    elif call == 11:
+        return display.display_help()
+        logging.debug("calling query and display for " + command)
 
-        elif key1 == "search":
-            if key3 == "":
-                data = queries.query_search(dataframe, key2)
-            else:
-                data = queries.query_search_field(dataframe, key2, key3)
-
-        file_name = str(input('file name: '))
-        write_to_file.write(data, file_name)
-
-    if command == "help":
-        if key1 == "":
-            print(display_help())
-            logging.info("calling query and display for " + command)
-            return 5
-        print(display_help_with_command())
-        logging.info("calling query and display for " + command)
-        return 6
+    elif call == 12:
+        return display.display_help_with_command(arg1)
+        logging.debug("calling query and display for " + command)

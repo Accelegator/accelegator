@@ -9,6 +9,9 @@ import display_strings
 from defaults import DEFAULT_CSVFILE
 from spreadsheet import create_csv
 import repl
+import route_commands
+import write_to_file
+import logging
 
 
 if __name__ == '__main__':
@@ -17,30 +20,45 @@ if __name__ == '__main__':
     print(display_strings.WELCOME)
     create_csv()
 
-    # FIXME >> should match CSV filepath written from spreadsheet.py
     DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
 
     command = str(input('>>> '))
-    key1 = ""
-    key2 = ""
-    key3 = ""
+    arg1 = ""
+    arg2 = ""
+    arg3 = ""
+    call = 0
     defined_commands = {"list", "show", "search", "write", "help", "quit"}
     fSet = frozenset(defined_commands)
+    args = []
     while command != "quit":
-        keywords = command.rsplit()
-        command = keywords[0]
-        while keywords[0] not in defined_commands:
-            print("invalid command")
+        args = command.rsplit()
+        command = args[0]
+        while args[0] not in defined_commands:
+            print("Invalid command. Type \"help\" to see list of valid commands.")
             command = str(input('>>> '))
-            keywords = command.rsplit()
-        if len(keywords) == 2:
-            key1 = keywords[1]
-        elif len(keywords) == 3:
-            key1 = keywords[1]
-            key2 = keywords[2]
-        elif len(keywords) == 4:
-            key1 = keywords[1]
-            key2 = keywords[2]
-            key3 = keywords[3]
-        repl.repl(command, command, key1, key2, key3)
+            args = command.rsplit()
+            command = args[0]
+        if len(args) == 2:
+            arg1 = args[1]
+        elif len(args) == 3:
+            arg1 = args[1]
+            arg2 = args[2]
+        elif len(args) == 4:
+            arg1 = args[1]
+            arg2 = args[2]
+            arg3 = args[3]
+        call = route_commands.route_commands(command, arg1, arg2)
+        output = repl.repl(DATAFRAME, call, arg1, arg2, arg3)
+        if (call == 6):
+            inner_call = route_commands.route_commands(arg1, arg2, arg3)
+            output = repl.repl(DATAFRAME, inner_call, arg1, arg2, arg3)
+            file_name = str(input('File to write to: '))
+            logging.info("Writing to file: " + file_name)
+            write_to_file.write(output, file_name)
+        else:
+            print(output)
+
+        arg1 = ""
+        arg2 = ""
+        arg3 = ""
         command = str(input('>>> '))
