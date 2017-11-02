@@ -3,7 +3,6 @@
 import logging
 import display
 import queries
-import write_to_file
 
 
 def repl(dataframe, call, command, arg1, arg2):
