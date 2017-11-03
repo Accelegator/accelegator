@@ -27,10 +27,10 @@ def repl(dataframe, call, command, arg1, arg2):
         return display.display_search_with_field(queries.query_search_field(dataframe, int(arg1), arg2))
         logging.debug("calling query and display for " + command + " with args " + arg1 + ", " + arg2)
 
-    elif call == 11:
+    elif call == 7:
         return display.display_help()
         logging.debug("calling query and display for " + command)
 
-    elif call == 12:
+    elif call == 8:
         return display.display_help_with_command(arg1)
         logging.debug("calling query and display for " + command)

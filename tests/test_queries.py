@@ -6,7 +6,7 @@ import pandas
 import queries
 
 
-CSVDATA = StringIO("""timestampcol,emailcol,field1col,field2col
+CSVDATA = StringIO(u"""timestampcol,emailcol,field1col,field2col
 "10/18/2017 13:40:21",fdsa,hgfd,dfhg
 "10/18/2017 13:43:18",rewq,uytr,rtyu
 "10/31/2017 14:16:04",uiop,lkjh,jkkj""")
@@ -53,7 +53,7 @@ def test_query_search_field_nomatch():
 
 def test_query_show_field():
     """ verify single field with historical data is returned """
-    actual = queries.query_show_field(DATAFRAME, 3, "rewq")
+    actual = queries.query_show_field(DATAFRAME, "rewq", 3)
     expected = ("rewq", "field2col", [(("10/18/2017 13:43:18", True), "rtyu")])
     assert actual == expected
 
