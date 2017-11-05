@@ -4,7 +4,7 @@ Accelegator is a professor advisor tool written to hekp advisors help their stud
 
 ## Installation
 
-Accelegator is a python 3 program and, therefore uses [pip](https://pip.pypa.io/en/stable/installing/) for installation. Type the following commands before running.
+Accelegator is a python 3 program and, therefore uses [pip](https://pip.pypa.io/en/stable/installing/) for installation. Type the following commands before running:
 
 ```shell
 pip install --upgrade pip
@@ -12,6 +12,12 @@ pip install -r requirements.txt
 ```
 
 ## Initial Setup
+
+Install gspread as well as oauth2client in yur root directory in the repository using the command:
+
+```shell
+python3 -m pip install --user gspread oauth2client
+```
 
 ---
 
