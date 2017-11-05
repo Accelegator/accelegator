@@ -70,3 +70,4 @@ Travis can only be implemented by admin accounts. Admin users can activate Travi
 ---
 
 ## Questions or Comments
+Any problems regarding Accelegator can be written in the issues link at the top of the site.
