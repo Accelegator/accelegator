@@ -41,9 +41,15 @@ Accelegator in an interactive inpormation program. Once the general information 
 
 ### Functions Tested
 
-The test suite verifies Accelegator's functions. The first function that is tested is
+The test suite verifies Accelegator's functions. The first function that is tested is ___________
 
 ### Running the Test Suite
+
+To run the test suite, run the following commands in Aggelegators root directory:
+
+```shell
+pytest tests
+```
 
 ### Automatic Linting
 
