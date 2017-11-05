@@ -61,6 +61,8 @@ autopep8 --in-place --aggressive --aggressive *.py
 
 ### Test Coverage
 
+Test coverage is being adressed by Coveralls so that when Travis-CI runs, it can evaluste the overall coverage of the test suite.
+
 ### Activating Travis-CI
 
 ---
