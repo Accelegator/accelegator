@@ -65,6 +65,8 @@ Test coverage is being adressed by Coveralls so that when Travis-CI runs, it can
 
 ### Activating Travis-CI
 
+Travis can only be implemented by admin accounts. Admin users can activate Travis by craeting a .travis.yml file in the project's root directory.
+
 ---
 
 ## Questions or Comments
