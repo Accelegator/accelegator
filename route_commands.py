@@ -1,4 +1,4 @@
-""" Routes commands to the REPL """
+""" Routes commands to the REPL. REPL links commands, arguments and calls"""
 
 
 def route_commands(command, arg1, arg2):

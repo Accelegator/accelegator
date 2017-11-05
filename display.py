@@ -1,3 +1,4 @@
+"""Makes program display - displays help option, search, quit and other commands for user"""
 from colors import bold
 from colors import negative
 import logging

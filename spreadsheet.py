@@ -1,4 +1,4 @@
-""" Google Sheets Integration """
+""" Creates a csv file from the Google Form after collection of data """
 
 import csv
 import logging
