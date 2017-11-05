@@ -1,10 +1,14 @@
 # Accelegator
 
-Accelegator is a professor advisor tool written to hekp advisors help their students. The prograg takes information on inidvidual adviees , analyses it andd compiles it, and then displayes it for the advisor in a helpful manner. Accelegator can also take the information on multiple students, analyse, compile and compaire, and then display. The user need only send out qustionaires to the advisees and, once submitted, Accelegator will read in and check the information for the user.
+Accelegator is a professor advisor tool written to hekp advisors help their students. The prograg takes information on inidvidual
+adviees , analyses it andd compiles it, and then displayes it for the advisor in a helpful manner. Accelegator can also take the
+information on multiple students, analyse, compile and compaire, and then display. The user need only send out qustionaires to the
+advisees and, once submitted, Accelegator will read in and check the information for the user.
 
 ## Installation
 
-Accelegator is a python 3 program and, therefore uses [pip](https://pip.pypa.io/en/stable/installing/) for installation. Type the following commands before running:
+Accelegator is a python 3 program and, therefore uses [pip](https://pip.pypa.io/en/stable/installing/) for installation. Type the
+following commands before running:
 
 ```shell
 pip install --upgrade pip
@@ -31,7 +35,8 @@ See LegalitiesPrivacy_Accelegator.md file for information.
 
 ### Search Quries and Feild
 
-Accelegator in an interactive inpormation program. Once the general information has been compiled, users may search for more specified information on advisees including groups of sililar advisees, skills, and more.
+Accelegator in an interactive inpormation program. Once the general information has been compiled, users may search for more specified
+information on advisees including groups of sililar advisees, skills, and more.
 
 ### (what other features do they have???)
 
@@ -53,7 +58,8 @@ pytest tests
 
 ### Automatic Linting
 
-The linting automatically checks to ensure Accelegator's code is up to pep8 standards. If linting errors occur run the following command to prform automatic linting:
+The linting automatically checks to ensure Accelegator's code is up to pep8 standards. If linting errors occur run the following command
+to prform automatic linting:
 
 ```shell
 autopep8 --in-place --aggressive --aggressive *.py
@@ -65,7 +71,8 @@ Test coverage is being adressed by Coveralls so that when Travis-CI runs, it can
 
 ### Activating Travis-CI
 
-Travis can only be implemented by admin accounts. Admin users can activate Travis by craeting a .travis.yml file in the project's root directory.
+Travis can only be implemented by admin accounts. Admin users can activate Travis by craeting a .travis.yml file in the project's root
+directory.
 
 ---
 
