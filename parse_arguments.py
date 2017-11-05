@@ -17,7 +17,7 @@ def parse_arguments(args):
         action="store_const",
         dest="logging_level",
         const=logging.DEBUG,
-        default=logging.ERROR
+        default=logging.ERROR        
     )
 
     parser.add_argument(

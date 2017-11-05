@@ -48,10 +48,10 @@ if __name__ == '__main__':
             arg2 = args[2]
             arg3 = args[3]
         call = route_commands.route_commands(command, arg1, arg2)
-        output = repl.repl(DATAFRAME, call, arg1, arg2, arg3)
+        output = repl.repl(DATAFRAME, call, command, arg1, arg2, arg3)
         if (call == 6):
             inner_call = route_commands.route_commands(arg1, arg2, arg3)
-            output = repl.repl(DATAFRAME, inner_call, arg1, arg2, arg3)
+            output = repl.repl(DATAFRAME, inner_call, command, arg1, arg2, arg3)
             file_name = str(input('File to write to: '))
             logging.info("Writing to file: " + file_name)
             write_to_file.write(output, file_name)
