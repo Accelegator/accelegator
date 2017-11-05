@@ -3,3 +3,4 @@ py==1.4.34
 pytest==3.2.1
 pandas==0.21.0
 ansicolors==1.1.8
+gspread==0.6.2

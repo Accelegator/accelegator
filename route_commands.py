@@ -2,6 +2,7 @@
 
 
 def route_commands(command, arg1, arg2):
+    call = 0
 
     if command == "list":
         call = 1
