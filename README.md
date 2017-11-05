@@ -23,6 +23,8 @@ python3 -m pip install --user gspread oauth2client
 
 ## Usage
 
+Accelegator analysis advisee questionaires and uses natraul language progessint to compile and sort the information fot advisors.
+
 ###
 
 ---
