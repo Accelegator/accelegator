@@ -38,7 +38,9 @@ See LegalitiesPrivacy_Accelegator.md file for information.
 Accelegator in an interactive information program. Once the general information has been compiled, users may search for more specified
 information on advisees including groups of similar advisees, skills, and more.
 
-### (what other features do they have???)
+### Commands
+
+Accelegator has command options for a better user experience such as help and quit.
 
 ---
 
