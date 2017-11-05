@@ -5,7 +5,7 @@ import display
 import queries
 
 
-def repl(dataframe, call, command, arg1, arg2):
+def repl(dataframe, call, command, arg1, arg2, arg3):
 
     if call == 1:
         return display.display_list(queries.query_list(dataframe))
