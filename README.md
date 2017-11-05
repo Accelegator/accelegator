@@ -29,6 +29,12 @@ Accelegator analysis advisee questionaires and uses natraul language progessint 
 
 See LegalitiesPrivacy_Accelegator.md file for information.
 
+### Search Quries and Feild
+
+Accelegator in an interactive inpormation program. Once the general information has been compiled, users may search for more specified information on advisees including groups of sililar advisees, skills, and more.
+
+### (what other features do they have???)
+
 ---
 
 ## Testing
