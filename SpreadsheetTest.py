@@ -16,3 +16,4 @@ sheet = client.open("Accelegator Test Form (Responses)").sheet1
 # Extract and print all of the values
 list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
+
