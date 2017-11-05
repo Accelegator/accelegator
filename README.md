@@ -53,6 +53,12 @@ pytest tests
 
 ### Automatic Linting
 
+The linting automatically checks to ensure Accelegator's code is up to pep8 standards. If linting errors occur run the following command to prform automatic linting:
+
+```shell
+autopep8 --in-place --aggressive --aggressive *.py
+```
+
 ### Test Coverage
 
 ### Activating Travis-CI
