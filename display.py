@@ -48,15 +48,15 @@ def display_list_help():
 
 def display_show_help():
     header = "show\n----"
-    command_one = "show <emai>"
+    command_one = "show <email>"
     description_one = "Display flattened (i.e. the latest response for each field) responses for advisee with <email>"
     arguments_one = "<email>: Email of advisee. Include \"@allegheny.edu\""
     command_one_tuple = (header, command_one, description_one, arguments_one)
     logging.debug("Command one details: " + str(command_one_tuple))
 
     command_two = "show <email> <field>"
-    description_two = "Display all responses for advisee with <email> for given <field>. Will show all previous and latest responses."
-    arguments_two = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\tallegheny-email\n\tid\n\tname\n\tresume\n\tcover-letter\n\tfour-year-plan\n\tgrad-year\n\tgithub\n\twebsite\n\tlinkedin\n\ttwitter\n\tfav-major-class\n\tfav-nonmajor-class\n\tcareer\n\tacademic-interests\n\tpersonal-interests\n\ttech-strengths\n\ttech-weaknesses\n\tacademic-status\n\tpersonal-status\n\tadvisor-questions"
+    description_two = "Display all responses for advisee with <email> for given <field> (a number). Will show all previous and latest responses."
+    arguments_two = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\t1:allegheny-email\n\t2:name\n\t3:id\n\t4:grad-year\n\t5:major\n\t6:second-major\n\t7:minor\n\t8:second-minor\n\t9:resume\n\t10:academic-status\n\t11:personal-status\n\t12:cover-letter\n\t13:twitter\n\t14:linkedin\n\t15:website\n\t16:fav-major-class\n\t17:fav-nonmajor-class\n\t18:career\n\t19:academic-interests\n\t20:personal-interests\n\t21:tech-strengths\n\t22:tech-weaknesses\n\t23:hows-school\n\t24:advisor-questions"
     command_two_tuple = (command_two, description_two, arguments_two)
     logging.debug("Command two details: " + str(command_two_tuple))
 
@@ -71,9 +71,9 @@ def display_search_help():
     command_one_tuple = (header, command_one, description_one, arguments_one)
     logging.debug("Command one details: " + str(command_one_tuple))
 
-    command_two = "seach <field> <keyword>"
+    command_two = "search <field> <keyword>"
     description_two = "can input any of the fields listed below and insert any keyword which would parse through the database for anything matching the keyword or anything close to it"
-    arguments_two = "<keyword>: Any single string\n<field>: Can be any of the following\n\tallegheny-email\n\tid\n\tname\n\tresume\n\tcover-letter\n\tfour-year-plan\n\tgrad-year\n\tgithub\n\twebsite\n\tlinkedin\n\ttwitter\n\tfav-major-class\n\tfav-nonmajor-class\n\tcareer\n\tacademic-interests\n\tpersonal-interests\n\ttech-strengths\n\ttech-weaknesses\n\tacademic-status\n\tpersonal-status\n\tadvisor-questions"
+    arguments_two = "<keyword>: Any single string\n<field>: Can be any of the following\n\t1:allegheny-email\n\t2:name\n\t3:id\n\t4:grad-year\n\t5:major\n\t6:second-major\n\t7:minor\n\t8:second-minor\n\t9:resume\n\t10:academic-status\n\t11:personal-status\n\t12:cover-letter\n\t13:twitter\n\t14:linkedin\n\t15:website\n\t16:fav-major-class\n\t17:fav-nonmajor-class\n\t18:career\n\t19:academic-interests\n\t20:personal-interests\n\t21:tech-strengths\n\t22:tech-weaknesses\n\t23:hows-school\n\t24:advisor-questions"
     command_two_tuple = (command_two, description_two, arguments_two)
     logging.debug("Command two details: " + str(command_two_tuple))
 
