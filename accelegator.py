@@ -1,4 +1,4 @@
-""" Accelegator: A Software Tool for Accelerated and Adaptive Advising """
+""" Accelegator: tool for advisors to quickly access infoemation on advisees in a helpful display """
 
 # python libraries
 import sys
