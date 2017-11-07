@@ -1,13 +1,16 @@
 # Accelegator
 
-Accelegator is a professor advisor tool written to help advisors help their students. The program takes information on
-individual advisees, analyses it and compiles it, and then displays it for the advisor in a helpful manner. Accelegator can
-also take the information on multiple students, analyses, compile and compare, and then display. The user need only send out
-qustionnaires to the advisees and, once submitted, Accelegator will read in and check the information for the user.
+Accelegator is a professor advisor tool written to help advisors help their students.
+The program takes information on individual advisees, analyses it and compiles it, and
+then displays it for the advisor in a helpful manner. Accelegator can
+also take the information on multiple students, analyses, compile and compare, and then
+display. The user need only send out questionnaires to the advisees and, once
+submitted, Accelegator will read in and check the information for the user.
 
 ## Installation
 
-Accelegator is a python 3 program and, therefore uses [pip](https://pip.pypa.io/en/stable/installing/) for installation. Type
+Accelegator is a python 3 program and, therefore uses
+[pip](https://pip.pypa.io/en/stable/installing/) for installation. Type
 the following commands before running:
 
 ```shell
@@ -45,16 +48,6 @@ Accelegator analysis advisee questionnaires and uses natural language
 processing to compile and sort the information for
 advisors.
 
-### Legalities and Privacy
-
-See LegalitiesPrivacy_Accelegator.md file for information.
-
-### Search Queries and Field
-
-Accelegator in an interactive information program. Once the general
-information has been compiled, users may search for more specified information
-on advisees including groups of similar advisees, skills, and more.
-
 Accelegator is able to search through the data by a specific
 question, person and also to return all the data contained within
 the form for textual analysis.
@@ -66,6 +59,16 @@ Where target = `person` or `question`
 and field = `<email>@allegheny.edu` or `question number`.
 
 In order to run, at minimum, ``<target>`` needs to be declared.
+
+### Legalities and Privacy
+
+See LegalitiesPrivacy_Accelegator.md file for information.
+
+### Search Queries and Field
+
+Accelegator in an interactive information program. Once the general
+information has been compiled, users may search for more specified information
+on advisees including groups of similar advisees, skills, and more.
 
 ### Commands
 
@@ -89,8 +92,8 @@ pytest tests
 
 ### Automatic Linting
 
-The linting automatically checks to ensure Accelegator's code is up to pep8 standards. If linting errors occur run the
-following command to perform automatic linting:
+The linting automatically checks to ensure Accelegator's code is up to pep8 standards.
+If linting errors occur run the following command to perform automatic linting:
 
 ```shell
 autopep8 --in-place --aggressive --aggressive *.py
@@ -98,15 +101,16 @@ autopep8 --in-place --aggressive --aggressive *.py
 
 ### Test Coverage
 
-Test coverage is being addressed by Coveralls so that when Travis-CI runs, it can evaluate the overall coverage of the test
-suite.
+Test coverage is being addressed by Coveralls so that when Travis-CI runs, it can
+evaluate the overall coverage of the test suite.
 
 ### Activating Travis-CI
 
-Travis can only be implemented by admin accounts. Admin users can activate Travis by creating a .travis.yml file in the
-project's root directory.
+Travis can only be implemented by admin accounts. Admin users can activate Travis by
+creating a .travis.yml file in the project's root directory.
 
 ---
 
 ## Questions or Comments
-Any problems regarding Accelegator can be written in the issues link at the top of the site.
+Any problems regarding Accelegator can be written in the issues link at the top of the
+site.
