@@ -39,5 +39,7 @@ def route_commands(command, arg1, arg2):
                 call = 11
             else:
                 call = 12
+        else:
+            call = 13
 
     return call

@@ -92,13 +92,19 @@ def display_write_help():
     
 def display_gensim_help():
     header = "gensim\n----"
-    command_one = "gensim <target> <field>"
-    description_one = "Perform NLP operations on <target> with <field>"
-    arguments_one = "<target>: 'person' or 'question'\n<field>: specific email or question number (leave blank for all)"
+    command_one = "gensim"
+    description_one = "Perform NLP operations on every response"
+    arguments_one = "None"
     command_one_tuple = (header, command_one, description_one, arguments_one)
     logging.debug("Command one details: " + str(command_one_tuple))
     
-    return format_command_description(command_one_tuple)
+    command_two = "gensim <target> <field>"
+    description_two = "Perform NLP operations on <target> with <field>"
+    arguments_two = "<target>: 'person' or 'question'\n<field>: specific email or question number (leave blank for all)"
+    command_two_tuple = (header, command_two, description_two, arguments_two)
+    logging.debug("Command one details: " + str(command_two_tuple))
+    
+    return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_quit_help():
