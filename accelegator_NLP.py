@@ -78,7 +78,7 @@ def corp_eval(dictionary, tokens, corpus):
     return(dictionary.dfs)
 
 
-def read_responses_question(data, arg2):
+def read_responses_question(data, FIRST_QUESTION, arg2):
     (rows, columns) = data.shape
     responses = list()
     # Checking if the argument passed was an in representing the question
@@ -94,7 +94,7 @@ def read_responses_question(data, arg2):
     # If the argument is the default it prints every questions responses with
     # analysis
     else:
-        for column in range(10, columns):
+        for column in range(FIRST_QUESTION, columns):
             print(column)
             texts = []
             for row in range(0, rows):
@@ -108,7 +108,7 @@ def read_responses_question(data, arg2):
             gensim_analysis(responses)
 
 
-def read_responses_person(data, arg2):
+def read_responses_person(data, FIRST_QUESTION, arg2):
     (rows, columns) = data.shape
     responses = list()
     column = 1
@@ -121,7 +121,7 @@ def read_responses_person(data, arg2):
         else:
             exists = False
     if(exists):
-        for column in range(10, columns):
+        for column in range(FIRST_QUESTION, columns):
             texts.append(str(data.iat[row, column]))
         responses = [[word for word in document.split()]for document in texts]
         print(responses)
@@ -142,11 +142,11 @@ def read_responses_person(data, arg2):
             gensim_analysis(responses)
 
 
-def read_responses_all(data):
+def read_responses_all(data, FIRST_QUESTION):
     texts = []
     (rows, columns) = data.shape
     for row in range(0, rows):
-        for column in range(10, columns):
+        for column in range(FIRST_QUESTION, columns):
             texts.append(str(data.iat[row, column]))
     responses = [[word for word in document.split()]for document in texts]
     # print(responses)
