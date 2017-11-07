@@ -1,11 +1,12 @@
 # Accelegator
 
-Accelegator is a professor advisor tool written to help advisors help their students.
-The program takes information on individual advisees, analyses it and compiles it, and
-then displays it for the advisor in a helpful manner. Accelegator can
-also take the information on multiple students, analyses, compile and compare, and then
-display. The user need only send out questionnaires to the advisees and, once
-submitted, Accelegator will read in and check the information for the user.
+Accelegator is a professor advisor tool written to help advisors help their
+students.The program takes information on individual advisees, analyses it and
+compiles it, and then displays it for the advisor in a helpful manner.
+Accelegator can also take the information on multiple students, analyses,
+compile and compare, and then display. The user need only send out
+questionnaires to the advisees and, once submitted, Accelegator will read in
+and check the information for the user.
 
 ## Installation
 
@@ -20,7 +21,8 @@ pip install -r requirements.txt
 
 ## Initial Setup
 
-Install gspread as well as oauth2client in your root directory in the repository using the command:
+Install gspread as well as oauth2client in your root directory in the
+repository using the command:
 
 ```shell
 python3 -m pip install --user gspread oauth2client
@@ -48,9 +50,9 @@ Accelegator analysis advisee questionnaires and uses natural language
 processing to compile and sort the information for
 advisors.
 
-Along with the NLP, Accelegator uses Latent Dirichlet Allocation (LDA) to analyze data
-by specific question, every question, specific person, every person or all the data
-with textual results.
+Along with the NLP, Accelegator uses Latent Dirichlet Allocation (LDA) to
+analyze data by specific question, every question, specific person, every
+person or all the data with textual results.
 
 How to run:
 `` gensim <target> <field> ``
@@ -59,8 +61,8 @@ Where target = `person` or `question`
 and field = `<email>@allegheny.edu` or `question number` or leave this blank for
 analysis for every entry in the target.
 
-In order to run, at minimum, ``<target>`` needs to be declared. This is also case
-sensitive.
+In order to run, at minimum, ``<target>`` needs to be declared. This is also
+case sensitive.
 
 ### Legalities and Privacy
 
@@ -74,18 +76,20 @@ on advisees including groups of similar advisees, skills, and more.
 
 ### Commands
 
-Accelegator has command options for a better user experience such as help and quit.
+Accelegator has command options for a better user experience such as help and
+quit.
 
 ---
 
 ## Testing
 
-Functions have been tested throughout this system to allow conformation that the system
-is working correctly.
+Functions have been tested throughout this system to allow conformation that
+the system is working correctly.
 
 ### Running the Test Suite
 
-To run the test suite, run the following commands in Accelegator's root directory:
+To run the test suite, run the following commands in Accelegator's root
+directory:
 
 ```shell
 pytest tests
@@ -93,8 +97,9 @@ pytest tests
 
 ### Automatic Linting
 
-The linting automatically checks to ensure Accelegator's code is up to pep8 standards.
-If linting errors occur run the following command to perform automatic linting:
+The linting automatically checks to ensure Accelegator's code is up to pep8
+standards. If linting errors occur run the following command to perform
+automatic linting:
 
 ```shell
 autopep8 --in-place --aggressive --aggressive *.py
@@ -102,16 +107,16 @@ autopep8 --in-place --aggressive --aggressive *.py
 
 ### Test Coverage
 
-Test coverage is being addressed by Coveralls so that when Travis-CI runs, it can
-evaluate the overall coverage of the test suite.
+Test coverage is being addressed by Coveralls so that when Travis-CI runs, it
+can evaluate the overall coverage of the test suite.
 
 ### Activating Travis-CI
 
-Travis can only be implemented by admin accounts. Admin users can activate Travis by
-creating a .travis.yml file in the project's root directory.
+Travis can only be implemented by admin accounts. Admin users can activate
+Travis by creating a .travis.yml file in the project's root directory.
 
 ---
 
 ## Questions or Comments
-Any problems regarding Accelegator can be written in the issues link at the top of the
-site.
+Any problems regarding Accelegator can be written in the issues link at the
+top of the site.
