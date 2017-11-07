@@ -22,12 +22,27 @@ Install gspread as well as oauth2client in your root directory in the repository
 ```shell
 python3 -m pip install --user gspread oauth2client
 ```
+Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
+Form, create yes or no questions to measure the capabilities and skills of the
+students that you wish to group.  After you have at least one submission of the
+Form, you can go to the responses tab and click on the green icon with the white
+cross through it.  This will enable you to link the Sheet to the Form.  You can
+either create a new Sheet or link to a preexisting one.  If you need to change
+the destination, you can click on the three dot icon menu to the right of the
+green icon and select "Select response destination".
 
+Open the `.json` file in the `accelegator` repository and find the `"client-email"`.
+Copy the quoted text that looks like an email address.  Return to the Sheet and
+open the sharing options.  Paste the address and click send.
+
+Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
+Sheet.
 ---
 
 ## Usage
 
-Accelegator analysis advisee questionnaires and uses natural language processing to compile and sort the information for
+Accelegator analysis advisee questionnaires and uses natural language
+processing to compile and sort the information for
 advisors.
 
 ### Legalities and Privacy
@@ -36,8 +51,21 @@ See LegalitiesPrivacy_Accelegator.md file for information.
 
 ### Search Queries and Field
 
-Accelegator in an interactive information program. Once the general information has been compiled, users may search for more
-specified information on advisees including groups of similar advisees, skills, and more.
+Accelegator in an interactive information program. Once the general
+information has been compiled, users may search for more specified information
+on advisees including groups of similar advisees, skills, and more.
+
+Accelegator is able to search through the data by a specific
+question, person and also to return all the data contained within
+the form for textual analysis.
+
+To search:
+`` gensim <target> <field> ``
+
+Where target = `person` or `question`
+and field = `<email>@allegheny.edu` or `question number`.
+
+In order to run, at minimum, ``<target>`` needs to be declared.
 
 ### Commands
 
