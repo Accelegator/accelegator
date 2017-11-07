@@ -27,7 +27,7 @@ def route_commands(command, arg1, arg2):
             call = 7
         else:
             call = 8
-            
+
     if command == "gensim":
         if arg1 == "person":
             if arg2 == "":

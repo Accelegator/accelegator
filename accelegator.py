@@ -19,14 +19,22 @@ if __name__ == '__main__':
     ARGUMENTS = parse_arguments(sys.argv[1:])
     print(display_strings.WELCOME)
     create_csv()
-    FIRST_QUESTION = int(input("Enter number of first textual question to be analyzed: "))
+    FIRST_QUESTION = int(
+        input("Enter number of first textual question to be analyzed: "))
     DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
     command = str(input('>>> '))
     arg1 = ""
     arg2 = ""
     arg3 = ""
     call = 0
-    defined_commands = {"help", "gensim","list", "show", "search", "write", "quit"}
+    defined_commands = {
+        "help",
+        "gensim",
+        "list",
+        "show",
+        "search",
+        "write",
+        "quit"}
     fSet = frozenset(defined_commands)
     args = []
     while command != "quit":
@@ -55,13 +63,17 @@ if __name__ == '__main__':
             logging.info("Writing to file: " + file_name)
             write_to_file.write(output, file_name)
         elif(call == 9):
-            accelegator_NLP.read_responses_person(DATAFRAME, FIRST_QUESTION, "all")
+            accelegator_NLP.read_responses_person(
+                DATAFRAME, FIRST_QUESTION, "all")
         elif(call == 10):
-            accelegator_NLP.read_responses_person(DATAFRAME, FIRST_QUESTION, arg2)
+            accelegator_NLP.read_responses_person(
+                DATAFRAME, FIRST_QUESTION, arg2)
         elif(call == 11):
-            accelegator_NLP.read_responses_question(DATAFRAME, FIRST_QUESTION, "all")
+            accelegator_NLP.read_responses_question(
+                DATAFRAME, FIRST_QUESTION, "all")
         elif(call == 12):
-            accelegator_NLP.read_responses_question(DATAFRAME, FIRST_QUESTION, int(arg2))
+            accelegator_NLP.read_responses_question(
+                DATAFRAME, FIRST_QUESTION, int(arg2))
         elif(call == 13):
             accelegator_NLP.read_responses_all(DATAFRAME, FIRST_QUESTION)
         else:
