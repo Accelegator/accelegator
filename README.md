@@ -32,7 +32,8 @@ Open the `.json` file in the `accelegator` repository and find the `"client-emai
 Copy the quoted text that looks like an email address.  Return to the Sheet and
 open the sharing options.  Paste the address and click send.
 
-Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your Sheet.
+Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
+Sheet.
 
 ------
 
@@ -71,8 +72,6 @@ on advisees including groups of similar advisees, skills, and more.
 Accelegator has command options for a better user experience such as help and
 quit.
 
----
-
 ## Testing
 
 Functions have been tested throughout this system to allow conformation that
@@ -106,8 +105,6 @@ can evaluate the overall coverage of the test suite.
 
 Travis can only be implemented by admin accounts. Admin users can activate
 Travis by creating a .travis.yml file in the project's root directory.
-
----
 
 ## Questions or Comments
 
