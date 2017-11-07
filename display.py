@@ -9,6 +9,7 @@ def display_help_with_command(command):
     """ Returns a string with verbose description and valid arguments for a command """
     command_functions = {
         "help": display_help_help,
+        "gensim": display_gensim_help,
         "list": display_list_help,
         "show": display_show_help,
         "search": display_search_help,
@@ -29,7 +30,7 @@ def display_help_help():
 
     command_two = "help <command>"
     description_two = "Show verbose description of usage and show valid arguments for <command>"
-    arguments_two = "<command>: Command to show description and valid arguments for. Can be any of the following\n\thelp\n\tlist\n\tshow\n\tsearch\n\twrite\n\tquit"
+    arguments_two = "<command>: Command to show description and valid arguments for. Can be any of the following\n\thelp\n\tgensim\n\tlist\n\tshow\n\tsearch\n\twrite\n\tquit"
     command_two_tuple = (command_two, description_two, arguments_two)
     logging.debug("Command two details: " + str(command_two_tuple))
 
@@ -89,6 +90,23 @@ def display_write_help():
     command_tuple = (header, command, description, arguments)
 
     return format_command_description(command_tuple)
+    
+
+def display_gensim_help():
+    header = "gensim\n----"
+    command_one = "gensim"
+    description_one = "Perform NLP operations on every response"
+    arguments_one = "None"
+    command_one_tuple = (header, command_one, description_one, arguments_one)
+    logging.debug("Command one details: " + str(command_one_tuple))
+    
+    command_two = "gensim <target> <field>"
+    description_two = "Perform NLP operations on <target> with <field>"
+    arguments_two = "<target>: 'person' or 'question'\n<field>: specific email or question number (leave blank for all)"
+    command_two_tuple = (header, command_two, description_two, arguments_two)
+    logging.debug("Command one details: " + str(command_two_tuple))
+    
+    return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_quit_help():
@@ -130,26 +148,15 @@ def display_help():
     commands_list = []
 
     commands_list.append((bold("Command"), bold("Description")))
-    commands_list.append(
-        ("help", "List commands and their brief descriptions"))
-    commands_list.append(
-        ("help <command>",
-         "List verbose description of <command> and show valid arguments for <command>"))
+    commands_list.append(("help", "List commands and their brief descriptions"))
+    commands_list.append(("help <command>", "List verbose description of <command> and show valid arguments for <command>"))
+    commands_list.append(("gensim <target> <field>", "Perform NLP based on <target> with specifier <field>"))
     commands_list.append(("list", "List emails of all advisees"))
-    commands_list.append(
-        ("show <email>", "Display flattened responses for advisee with <email>"))
-    commands_list.append(
-        ("show <email> <field>",
-         "Display all responses for advisee with <email> given <field>"))
-    commands_list.append(
-        ("search <keyword>",
-         "Search all fields of all responses of all advisees for <keyword>"))
-    commands_list.append(
-        ("search <field> <keyword>",
-         "Search given <field> of all responses of all advisees for <keyword>"))
-    commands_list.append(
-        ("write <command>",
-         "Write <command> output to file (will prompt for file name)"))
+    commands_list.append(("show <email>", "Display flattened responses for advisee with <email>"))
+    commands_list.append(("show <email> <field>", "Display all responses for advisee with <email> given <field>"))
+    commands_list.append(("search <keyword>", "Search all fields of all responses of all advisees for <keyword>"))
+    commands_list.append(("search <field> <keyword>", "Search given <field> of all responses of all advisees for <keyword>"))
+    commands_list.append(("write <command>", "Write <command> output to file (will prompt for file name)"))
     commands_list.append(("quit", "Exit the program"))
 
     help_string = ""
@@ -164,13 +171,11 @@ def display_help():
             right_list = (textwrap.wrap(right, width=40))
             for current_line, description_line in enumerate(right_list):
                 if current_line is 0:
-                    help_string += "{:<30s}{:<40s}".format(
-                        left, description_line) + "\n"
+                    help_string += "{:<30s}{:<40s}".format(left, description_line) + "\n"
                 else:
                     empty_space = ""
                     description_line = "\t" + description_line
-                    help_string += "{:<30s}{:<40s}".format(
-                        empty_space, description_line) + "\n"
+                    help_string += "{:<30s}{:<40s}".format(empty_space, description_line) + "\n"
 
     return help_string
 
@@ -340,4 +345,5 @@ def display_show_with_field(result_tuple):
         result += timestamp + "\n" + \
             textwrap.fill(response_string, width=80) + "\n"
 
-    return result
+    return result   
+    

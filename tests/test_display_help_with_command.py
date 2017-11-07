@@ -3,7 +3,7 @@ import display
 
 def test_display_help_with_command_help():
     """ Checks if correct string is returned for help command """
-    expected_help_string = """\x1b[1mhelp\n----\x1b[0m\nCommand: help\nDescription: List commands and their brief descriptions\nArguments: None\n\nCommand: help <command>\nDescription: Show verbose description of usage and show valid arguments for <command>\nArguments: <command>: Command to show description and valid arguments for. Can be any of the following\n\thelp\n\tlist\n\tshow\n\tsearch\n\twrite\n\tquit\n"""
+    expected_help_string = """\x1b[1mhelp\n----\x1b[0m\nCommand: help\nDescription: List commands and their brief descriptions\nArguments: None\n\nCommand: help <command>\nDescription: Show verbose description of usage and show valid arguments for <command>\nArguments: <command>: Command to show description and valid arguments for. Can be any of the following\n\thelp\n\tgensim\n\tlist\n\tshow\n\tsearch\n\twrite\n\tquit\n"""
     actual_help_string = display.display_help_with_command("help")
 
     assert repr(actual_help_string) == repr(expected_help_string)
