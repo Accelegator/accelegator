@@ -5,7 +5,6 @@ import sys
 # local dependencies
 from queries import parse_csv_into_dataframe
 from parse_arguments import parse_arguments
-import display_strings
 from defaults import DEFAULT_CSVFILE
 from spreadsheet import create_csv
 import repl
@@ -17,7 +16,7 @@ import logging
 if __name__ == '__main__':
 
     ARGUMENTS = parse_arguments(sys.argv[1:])
-    print(display_strings.WELCOME)
+    print("Welcome to Accelegator, a tool that facilitates academic advising.")
     create_csv()
 
     DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
@@ -48,7 +47,7 @@ if __name__ == '__main__':
             arg2 = args[2]
             arg3 = args[3]
         call = route_commands.route_commands(command, arg1, arg2)
-        output = repl.repl(DATAFRAME, call, arg1, arg2, arg3)
+        output = repl.repl(DATAFRAME, call, command, arg1, arg2)
         if (call == 6):
             inner_call = route_commands.route_commands(arg1, arg2, arg3)
             output = repl.repl(DATAFRAME, inner_call, arg1, arg2, arg3)
