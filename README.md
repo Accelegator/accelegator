@@ -48,15 +48,16 @@ Accelegator analysis advisee questionnaires and uses natural language
 processing to compile and sort the information for
 advisors.
 
-Accelegator is able to search through the data by a specific
-question, person and also to return all the data contained within
-the form for textual analysis.
+Along with the NLP, Accelegator uses Latent Dirichlet Allocation (LDA) to analyze data
+by specific question, every question, specific person, every person or all the data
+with textual results.
 
-To search:
+How to run:
 `` gensim <target> <field> ``
 
 Where target = `person` or `question`
-and field = `<email>@allegheny.edu` or `question number`.
+and field = `<email>@allegheny.edu` or `question number` or leave this blank for
+analysis for every entry in the target.
 
 In order to run, at minimum, ``<target>`` needs to be declared.
 
@@ -78,9 +79,8 @@ Accelegator has command options for a better user experience such as help and qu
 
 ## Testing
 
-### Functions Tested
-
-The test suite verifies Accelegator's functions. The first function that is tested is ___________
+Functions have been tested throughout this system to allow conformation that the system
+is working correctly.
 
 ### Running the Test Suite
 
