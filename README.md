@@ -59,7 +59,8 @@ Where target = `person` or `question`
 and field = `<email>@allegheny.edu` or `question number` or leave this blank for
 analysis for every entry in the target.
 
-In order to run, at minimum, ``<target>`` needs to be declared.
+In order to run, at minimum, ``<target>`` needs to be declared. This is also case
+sensitive.
 
 ### Legalities and Privacy
 
