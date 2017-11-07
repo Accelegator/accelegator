@@ -18,7 +18,7 @@ import accelegator_NLP
 if __name__ == '__main__':
     ARGUMENTS = parse_arguments(sys.argv[1:])
     print(display_strings.WELCOME)
-    print(3. https://github.com/Accelegator/accelegator)
+    print(display_strings.URL)
     create_csv()
     FIRST_QUESTION = int(
         input("Enter number of first textual question to be analyzed: "))
