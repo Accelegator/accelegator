@@ -1,49 +1,40 @@
 # Accelegator
 
-Accelegator is a professor advisor tool written to help advisors help their
-students.The program takes information on individual advisees, analyses it and
-compiles it, and then displays it for the advisor in a helpful manner.
-Accelegator can also take the information on multiple students, analyses,
-compile and compare, and then display. The user need only send out
-questionnaires to the advisees and, once submitted, Accelegator will read in
-and check the information for the user.
+Accelegator is an adaptive advising tool written to help advisors help their
+students. The program takes information on individual and multiple advisees,
+analyzing, compiling, and displaying it for the advisor in a helpful manner.
+The user need only send out questionnaires to the advisees and, once submitted,
+Accelegator will read in and use the information for the user.
 
 ## Installation
 
-Accelegator is a python 3 program and, therefore uses
-[pip](https://pip.pypa.io/en/stable/installing/) for installation. Type
-the following commands before running:
+Accelegator is a python 3 program and, therefore uses [pip][1] for installation.
+Type the following commands before running:
+
+[1]: https://pip.pypa.io/en/stable/installing
 
 ```shell
-pip install --upgrade pip
-pip install -r requirements.txt
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 ```
 
 ## Initial Setup
 
-Install gspread as well as oauth2client in your root directory in the
-repository using the command:
-
-```shell
-python3 -m pip install --user gspread oauth2client
-```
-
-Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
-Form, create yes or no questions to measure the capabilities and skills of the
-students that you wish to group.  After you have at least one submission of the
-Form, you can go to the responses tab and click on the green icon with the white
-cross through it.  This will enable you to link the Sheet to the Form.  You can
-either create a new Sheet or link to a preexisting one.  If you need to change
-the destination, you can click on the three dot icon menu to the right of the
-green icon and select "Select response destination".
+Create a Google Sheets spreadsheet and a Google Form in Google Drive.  After you
+have at least one submission of the Form, you can go to the responses tab and
+click on the green icon with the white cross through it.  This will enable you
+to link the Sheet to the Form.  You can either create a new Sheet or link to a
+preexisting one.  If you need to change the destination, you can click on the
+three dot icon menu to the right of the green icon and select "Select response
+destination".
 
 Open the `.json` file in the `accelegator` repository and find the `"client-email"`.
 Copy the quoted text that looks like an email address.  Return to the Sheet and
 open the sharing options.  Paste the address and click send.
 
-Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
-Sheet.
----
+Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your Sheet.
+
+------
 
 ## Usage
 
