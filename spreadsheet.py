@@ -1,4 +1,4 @@
-""" Creates a csv file from the Google Form after collection of data """
+""" Google Sheets Integration """
 
 import csv
 import logging
@@ -15,9 +15,9 @@ def create_csv():
     logging.info("Authenticating to Google Sheets to obtain Google Form data")
     # use creds to create a client to interact with the Google Drive API
     scope = ['https://spreadsheets.google.com/feeds']
-    creds = ServiceAccountCredentials.from_json_keyfile_name(
-        'AGAuthKey.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('AGAuthKey.json', scope)
     client = gspread.authorize(creds)
+    print(scope)
 
     # Find a workbook by name and open the first sheet
     # Make sure you use the right name here.

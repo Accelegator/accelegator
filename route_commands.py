@@ -1,4 +1,4 @@
-""" Routes commands to the REPL. REPL links commands, arguments and calls"""
+""" Routes commands to the REPL """
 
 
 def route_commands(command, arg1, arg2):
@@ -27,5 +27,17 @@ def route_commands(command, arg1, arg2):
             call = 7
         else:
             call = 8
+            
+    if command == "gensim":
+        if arg1 == "person":
+            if arg2 == "":
+                call = 9
+            else:
+                call = 10
+        elif arg1 == "question":
+            if arg2 == "":
+                call = 11
+            else:
+                call = 12
 
     return call

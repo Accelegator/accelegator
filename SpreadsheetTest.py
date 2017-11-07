@@ -1,5 +1,3 @@
-# Gives autorization to advisors
-
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -11,9 +9,8 @@ client = gspread.authorize(creds)
 
 # Find a workbook by name and open the first sheet
 # Make sure you use the right name here.
-sheet = client.open("Accelegator Test Form (Responses)").sheet1
+sheet = client.open("Accelegator Test Form (Responses Recent)").sheet1
 
 # Extract and print all of the values
 list_of_hashes = sheet.get_all_records()
 print(list_of_hashes)
-
