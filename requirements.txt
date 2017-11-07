@@ -5,3 +5,6 @@ pandas==0.21.0
 ansicolors==1.1.8
 gspread==0.6.2
 gensim==3.0.1
+profanity==1.1
+pyLDAvis==2.1.1
+stop-words==2015.2.23.1

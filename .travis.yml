@@ -18,8 +18,7 @@ install:
   - pip3 install pytest-cov
   - pip3 install pandas
   - pip3 install ansicolors
-  - pip3 install gensim
-  
+
 script:
   - pytest tests
   - mdl README.md
