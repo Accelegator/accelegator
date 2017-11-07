@@ -27,6 +27,7 @@ repository using the command:
 ```shell
 python3 -m pip install --user gspread oauth2client
 ```
+
 Create a Google Sheets spreadsheet and a Google Form in Google Drive.  In the
 Form, create yes or no questions to measure the capabilities and skills of the
 students that you wish to group.  After you have at least one submission of the
@@ -118,5 +119,6 @@ Travis by creating a .travis.yml file in the project's root directory.
 ---
 
 ## Questions or Comments
+
 Any problems regarding Accelegator can be written in the issues link at the
 top of the site.
