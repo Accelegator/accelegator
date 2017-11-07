@@ -8,3 +8,4 @@ gensim==3.0.1
 profanity==1.1
 pyLDAvis==2.1.1
 stop-words==2015.2.23.1
+colorama==0.3.9
