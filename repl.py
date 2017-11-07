@@ -1,4 +1,4 @@
-""" Takes the call numbers and routes them to commands. Links calls with commands and arguments """
+""" Takes the call numbers and routes them to commands """
 
 import logging
 import display
