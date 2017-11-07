@@ -1,4 +1,4 @@
-""" Accelegator: tool for advisors to quickly access infoemation on advisees in a helpful display """
+""" Accelegator: tool for advisors to quickly access information on advisees in a helpful display """
 
 # python libraries
 import sys
