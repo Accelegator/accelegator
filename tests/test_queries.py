@@ -53,7 +53,7 @@ def test_query_search_field_nomatch():
 
 def test_query_show_field():
     """ verify single field with historical data is returned """
-    actual = queries.query_show_field(DATAFRAME, 3, "rewq")
+    actual = queries.query_show_field(DATAFRAME, "rewq", 3)
     expected = ("rewq", "field2col", [(("10/18/2017 13:43:18", True), "rtyu")])
     assert actual == expected
 
