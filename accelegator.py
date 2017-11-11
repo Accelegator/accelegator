@@ -1,4 +1,4 @@
-""" Accelegator: A Software Tool for Accelerated and Adaptive Advising """
+"""Accelegator: A Software Tool for Accelerated and Adaptive Advising."""
 
 # python libraries
 import sys
@@ -28,6 +28,7 @@ if __name__ == '__main__':
     arg2 = ""
     arg3 = ""
     call = 0
+
     defined_commands = {
         "help",
         "gensim",
