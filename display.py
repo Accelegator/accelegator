@@ -3,10 +3,11 @@ from colors import bold
 from colors import negative
 import logging
 import textwrap
+import display_strings
 
 
 def display_help_with_command(command):
-    """ Returns a string with verbose description and valid arguments for a command """
+    """Return a string with verbose description and valid arguments for a command."""
     command_functions = {
         "help": display_help_help,
         "gensim": display_gensim_help,
@@ -21,101 +22,89 @@ def display_help_with_command(command):
 
 
 def display_help_help():
-    header = "help\n----"
-    command_one = "help"
-    description_one = "List commands and their brief descriptions"
-    arguments_one = "None"
-    command_one_tuple = (header, command_one, description_one, arguments_one)
+    command_one_tuple = (display_strings.HELP_HEADER,
+                         display_strings.HELP_COMMAND_ONE,
+                         display_strings.HELP_DESCRIPTION_ONE,
+                         display_strings.HELP_ARGUMENTS_ONE)
     logging.debug("Command one details: " + str(command_one_tuple))
 
-    command_two = "help <command>"
-    description_two = "Show verbose description of usage and show valid arguments for <command>"
-    arguments_two = "<command>: Command to show description and valid arguments for. Can be any of the following\n\thelp\n\tgensim\n\tlist\n\tshow\n\tsearch\n\twrite\n\tquit"
-    command_two_tuple = (command_two, description_two, arguments_two)
+    command_two_tuple = (display_strings.HELP_COMMAND_TWO,
+                         display_strings.HELP_DESCRIPTION_TWO,
+                         display_strings.HELP_ARGUMENTS_TWO)
     logging.debug("Command two details: " + str(command_two_tuple))
 
     return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_list_help():
-    header = "list\n----"
-    command = "list"
-    description = "List emails of all advisees"
-    arguments = "None"
-    command_tuple = (header, command, description, arguments)
+    command_tuple = (display_strings.LIST_HEADER,
+                     display_strings.LIST_COMMAND,
+                     display_strings.LIST_DESCRIPTION,
+                     display_strings.LIST_ARGUMENTS)
     logging.debug("Command details: " + str(command_tuple))
 
     return format_command_description(command_tuple)
 
 
 def display_show_help():
-    header = "show\n----"
-    command_one = "show <email>"
-    description_one = "Display flattened (i.e. the latest response for each field) responses for advisee with <email>"
-    arguments_one = "<email>: Email of advisee. Include \"@allegheny.edu\""
-    command_one_tuple = (header, command_one, description_one, arguments_one)
+    command_one_tuple = (display_strings.SHOW_HEADER,
+                         display_strings.SHOW_COMMAND_ONE,
+                         display_strings.SHOW_DESCRIPTION_ONE,
+                         display_strings.SHOW_ARGUMENTS_ONE)
     logging.debug("Command one details: " + str(command_one_tuple))
 
-    command_two = "show <email> <field>"
-    description_two = "Display all responses for advisee with <email> for given <field> (a number). Will show all previous and latest responses."
-    arguments_two = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\t1:allegheny-email\n\t2:name\n\t3:id\n\t4:grad-year\n\t5:major\n\t6:second-major\n\t7:minor\n\t8:second-minor\n\t9:resume\n\t10:academic-status\n\t11:personal-status\n\t12:cover-letter\n\t13:twitter\n\t14:linkedin\n\t15:website\n\t16:fav-major-class\n\t17:fav-nonmajor-class\n\t18:career\n\t19:academic-interests\n\t20:personal-interests\n\t21:tech-strengths\n\t22:tech-weaknesses\n\t23:hows-school\n\t24:advisor-questions"
-    command_two_tuple = (command_two, description_two, arguments_two)
+    command_two_tuple = (display_strings.SHOW_COMMAND_TWO,
+                         display_strings.SHOW_DESCRIPTION_TWO,
+                         display_strings.SHOW_ARGUMENTS_TWO)
     logging.debug("Command two details: " + str(command_two_tuple))
 
     return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_search_help():
-    header = "search\n------"
-    command_one = "search <field>"
-    description_one = "Search all fields of all responses of all advisees for given <keyword>"
-    arguments_one = "<keyword>: Any single string"
-    command_one_tuple = (header, command_one, description_one, arguments_one)
+    command_one_tuple = (display_strings.SEARCH_HEADER,
+                         display_strings.SEARCH_COMMAND_ONE,
+                         display_strings.SEARCH_DESCRIPTION_ONE,
+                         display_strings.SEARCH_ARGUMENTS_ONE)
     logging.debug("Command one details: " + str(command_one_tuple))
 
-    command_two = "search <field> <keyword>"
-    description_two = "can input any of the fields listed below and insert any keyword which would parse through the database for anything matching the keyword or anything close to it"
-    arguments_two = "<keyword>: Any single string\n<field>: Can be any of the following\n\t1:allegheny-email\n\t2:name\n\t3:id\n\t4:grad-year\n\t5:major\n\t6:second-major\n\t7:minor\n\t8:second-minor\n\t9:resume\n\t10:academic-status\n\t11:personal-status\n\t12:cover-letter\n\t13:twitter\n\t14:linkedin\n\t15:website\n\t16:fav-major-class\n\t17:fav-nonmajor-class\n\t18:career\n\t19:academic-interests\n\t20:personal-interests\n\t21:tech-strengths\n\t22:tech-weaknesses\n\t23:hows-school\n\t24:advisor-questions"
-    command_two_tuple = (command_two, description_two, arguments_two)
+    command_two_tuple = (display_strings.SEARCH_COMMAND_TWO,
+                         display_strings.SEARCH_DESCRIPTION_TWO,
+                         display_strings.SEARCH_ARGUMENTS_TWO)
     logging.debug("Command two details: " + str(command_two_tuple))
 
     return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_write_help():
-    header = "write\n-----"
-    command = "write"
-    description = "Write the output of <command> to file (will prompt for file name)"
-    arguments = "<command>: Command whose output to write to file"
-    command_tuple = (header, command, description, arguments)
+    command_tuple = (display_strings.WRITE_HEADER,
+                     display_strings.WRITE_COMMAND,
+                     display_strings.WRITE_DESCRIPTION,
+                     display_strings.WRITE_ARGUMENTS)
 
     return format_command_description(command_tuple)
-    
+
 
 def display_gensim_help():
-    header = "gensim\n----"
-    command_one = "gensim"
-    description_one = "Perform NLP operations on every response"
-    arguments_one = "None"
-    command_one_tuple = (header, command_one, description_one, arguments_one)
+    command_one_tuple = (display_strings.GENSIM_HEADER,
+                         display_strings.GENSIM_COMMAND_ONE,
+                         display_strings.GENSIM_DESCRIPTION_ONE,
+                         display_strings.GENSIM_ARGUMENTS_ONE)
     logging.debug("Command one details: " + str(command_one_tuple))
-    
-    command_two = "gensim <target> <field>"
-    description_two = "Perform NLP operations on <target> with <field>"
-    arguments_two = "<target>: 'person' or 'question'\n<field>: specific email or question number (leave blank for all)"
-    command_two_tuple = (header, command_two, description_two, arguments_two)
+
+    command_two_tuple = (display_strings.GENSIM_COMMAND_TWO,
+                         display_strings.GENSIM_DESCRIPTION_TWO,
+                         display_strings.GENSIM_ARGUMENTS_TWO)
     logging.debug("Command one details: " + str(command_two_tuple))
-    
+
     return format_command_description(command_one_tuple, command_two_tuple)
 
 
 def display_quit_help():
-    header = "quit\n----"
-    command = "quit"
-    description = "Quits the Accelegator program"
-    arguments = "None"
-
-    command_tuple = (header, command, description, arguments)
+    command_tuple = (display_strings.QUIT_HEADER,
+                     display_strings.QUIT_COMMAND,
+                     display_strings.QUIT_DESCRIPTION,
+                     display_strings.QUIT_ARGUMENTS)
 
     return format_command_description(command_tuple)
 
@@ -126,42 +115,28 @@ def format_command_description(command_one_tuple, command_two_tuple=None):
     command_one = command_one_tuple[1]
     description_one = command_one_tuple[2]
     arguments_one = command_one_tuple[3]
-    command_one_string = header + "\n" + "Command: " + command_one + "\n" + \
-        "Description: " + description_one + "\nArguments: " + arguments_one + "\n"
+    command_one_string = header + "\n" + display_strings.COMMAND_LABEL + command_one + "\n" + \
+        display_strings.DESCRIPTION_LABEL + description_one + display_strings.ARGUMENTS_LABEL + arguments_one + "\n"
 
     if command_two_tuple is not None:
         logging.info("Formatting second command")
         command_two = command_two_tuple[0]
         description_two = command_two_tuple[1]
         arguments_two = command_two_tuple[2]
-        command_two_string = "Command: " + command_two + "\n" + "Description: " + \
-            description_two + "\nArguments: " + arguments_two + "\n"
+        command_two_string = display_strings.COMMAND_LABEL + command_two + "\n" + display_strings.DESCRIPTION_LABEL + \
+            description_two + "\n" + display_strings.ARGUMENTS_LABEL + arguments_two + "\n"
         return command_one_string + "\n" + command_two_string
     else:
         return command_one_string
 
 
 def display_help():
-    """ Returns a string with a list of commands and their brief descriptions """
+    """Return a string with a list of commands and their brief descriptions."""
     logging.info("Creating help string")
-
-    commands_list = []
-
-    commands_list.append((bold("Command"), bold("Description")))
-    commands_list.append(("help", "List commands and their brief descriptions"))
-    commands_list.append(("help <command>", "List verbose description of <command> and show valid arguments for <command>"))
-    commands_list.append(("gensim <target> <field>", "Perform NLP based on <target> with specifier <field>"))
-    commands_list.append(("list", "List emails of all advisees"))
-    commands_list.append(("show <email>", "Display flattened responses for advisee with <email>"))
-    commands_list.append(("show <email> <field>", "Display all responses for advisee with <email> given <field>"))
-    commands_list.append(("search <keyword>", "Search all fields of all responses of all advisees for <keyword>"))
-    commands_list.append(("search <field> <keyword>", "Search given <field> of all responses of all advisees for <keyword>"))
-    commands_list.append(("write <command>", "Write <command> output to file (will prompt for file name)"))
-    commands_list.append(("quit", "Exit the program"))
 
     help_string = ""
 
-    for current_index, command_tuple in enumerate(commands_list):
+    for current_index, command_tuple in enumerate(display_strings.commands_list):
         left = command_tuple[0]
         right = command_tuple[1]
         if current_index is 0:
@@ -181,11 +156,11 @@ def display_help():
 
 
 def display_list(list_of_advisees):
-    """ Returns a string that is list of advisees' emails """
-    result = bold("Advisees") + "\n"
+    """Return a string that is list of advisees' emails."""
+    result = display_strings.LIST_HEADER + "\n"
 
     if not list_of_advisees or list_of_advisees is None:
-        return result + "None to list\n"
+        return result + display_strings.NO_ADVISEES + "\n"
 
     for email in list_of_advisees:
         result += str(email) + "\n"
@@ -194,9 +169,9 @@ def display_list(list_of_advisees):
 
 
 def display_search(result_tuple, has_field=False):
-    """ Returns string of list of advisees with responses that match search
+    """Return string of list of advisees with responses that match search
         query. result_tuple takes on the form:
-        (keyword, [((timestamp, latest), email, field, response)]) """
+        (keyword, [((timestamp, latest), email, field, response)])."""
     KEYWORD_INDEX = 0
 
     # result_tuple differs based on whether it is returned by the query_search
@@ -210,9 +185,9 @@ def display_search(result_tuple, has_field=False):
     TIMESTAMP_LATEST_INDEX = 1
 
     EMAIL_INDEX = 1
-
+    ############################################ START HERE ###########################################
     if result_tuple is None:
-        logging.error("result_tuple parameter is None")
+        logging.error("result_tuple is None")
         return "No input tuple given"
     if result_tuple is ():
         logging.error("result_tuple is empty")
@@ -345,5 +320,4 @@ def display_show_with_field(result_tuple):
         result += timestamp + "\n" + \
             textwrap.fill(response_string, width=80) + "\n"
 
-    return result   
-    
+    return result

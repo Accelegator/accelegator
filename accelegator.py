@@ -1,4 +1,4 @@
-"""Accelegator: A Software Tool for Accelerated and Adaptive Advising."""
+"""Accelegator: A software tool for accelerated and adaptive advising."""
 
 # python libraries
 import sys
