@@ -14,8 +14,8 @@ Type the following commands before running:
 [1]: https://pip.pypa.io/en/stable/installing
 
 ```shell
-pip3 install --upgrade pip
-pip3 install -r requirements.txt --user
+pip3 install --user --upgrade pip
+pip3 install --user -r requirements.txt
 ```
 
 ## Initial Setup
@@ -32,14 +32,32 @@ Open the `.json` file in the `accelegator` repository and find the `"client-emai
 Copy the quoted text that looks like an email address.  Return to the Sheet and
 open the sharing options.  Paste the address and click send.
 
+In order to run Accelegator, the `.json` file for the program, AGAuthKey.json,
+must be in the root directory of the Accelegator product. The file can be found
+in the Google Drive folder for Accelegator and must be downloaded by the user.
+The reason for the `.json` file is that this program analyzes confidential
+information and so by having this file, only those with permission can actually
+run the program and gain access to the information.
+
 Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
 Sheet.
 
-------
-
 ## Usage
 
-Accelegator analysis advisee questionnaires and uses natural language
+To initially run Accelegator, enter python3 accelegator.py into the terminal.
+After starting the program, the user will be asked to "Enter number of first
+textual question to be analyzed". For the original form being used, the number
+is 10. The reason for this is that the gensim analysis must begin at the first
+textual question and runs through the last question. By adding this option, if
+the form is ever edited so that the first textual question is in a different
+position, the user can specify where the analysis should begin instead of having
+to edit the source code.
+
+Following that, the user may enter any viable command to execute a specific
+feature of the product. It is recommended to run `help` at first in order
+to see the possible commands
+
+Accelegator analyzes advisee questionnaires and uses natural language
 processing to compile and sort the information for
 advisors.
 
@@ -70,7 +88,10 @@ on advisees including groups of similar advisees, skills, and more.
 ### Commands
 
 Accelegator has command options for a better user experience such as help and
-quit.
+quit. Help displays all the possible commands for the program and when another
+command is added following help (ie >>>help show) the program will explain to
+the user how to use that command and the arguments that it may require in order
+to be run.
 
 ## Testing
 
@@ -95,6 +116,10 @@ automatic linting:
 ```shell
 autopep8 --in-place --aggressive --aggressive *.py
 ```
+
+If the autolinting tool cannot fix every error, it will display where each
+error is in the program and what the error type is in order for the user to
+address it properly.
 
 ### Test Coverage
 
