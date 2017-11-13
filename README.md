@@ -20,20 +20,28 @@ pip3 install -r requirements.txt --user
 
 ## Initial Setup
 
-Create a Google Sheets spreadsheet and a Google Form in Google Drive.  After you
-have at least one submission of the Form, you can go to the responses tab and
-click on the green icon with the white cross through it.  This will enable you
-to link the Sheet to the Form.  You can either create a new Sheet or link to a
-preexisting one.  If you need to change the destination, you can click on the
-three dot icon menu to the right of the green icon and select "Select response
-destination".
+To begin, we need to make sure that the OAuth client for python has been isntalled. Inside the repository folder open up a terminal (or for windows users cmd). In the terminal use the command:
 
-Open the `.json` file in the `accelegator` repository and find the `"client-email"`.
-Copy the quoted text that looks like an email address.  Return to the Sheet and
-open the sharing options.  Paste the address and click send.
+`python3 -m pip install --user gspread oauth2client`
 
-Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
-Sheet.
+###Creating a Google Form
+In your Google account online, go to Google Drive and create a new Google Sheets spreadsheet and a Google form. In the Form, create a questionaire to with the information you wish to obtain from students. After you have at least one submission of the form go to the responses tab:
+
+![alt text](https://imgur.com/ctAYBmq "Response Tab")
+
+and click on the green icon with the white cross through it to link the form to the Google Sheet:
+
+![alt text](https://imgur.com/mFFCicS "Click this to link")
+
+If you need to change the destination, you can click on the three dot icon menu to the right of the green icon and select "Select response destination":
+
+![alt text](https://imgur.com/T9AaNPQ "Click this to change destination")
+
+### Creating a Service Account
+Open the .json file in the gatorgrouper repository and find the "client-email". Copy the quoted text that looks like an email address. Return to the Sheet and open the sharing options. Paste the address and click send. Alternatively, if you would like to create your own service account for confidentiality and security, follow the tutorial found at www.twolio.com to create a personal service account.
+
+Within defaults.py, update the DEFAULT_WORKBOOK constant to the name of your Sheet.
+
 
 ------
 
