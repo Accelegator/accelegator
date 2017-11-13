@@ -27,15 +27,15 @@ To begin, we need to make sure that the OAuth client for python has been isntall
 ###Creating a Google Form
 In your Google account online, go to Google Drive and create a new Google Sheets spreadsheet and a Google form. In the Form, create a questionaire to with the information you wish to obtain from students. After you have at least one submission of the form go to the responses tab:
 
-![alt text](https://imgur.com/ctAYBmq "Response Tab")
+![Response Tab Image](https://i.imgur.com/ctAYBmq.png "Response Tab")
 
 and click on the green icon with the white cross through it to link the form to the Google Sheet:
 
-![alt text](https://imgur.com/mFFCicS "Click this to link")
+![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")
 
 If you need to change the destination, you can click on the three dot icon menu to the right of the green icon and select "Select response destination":
 
-![alt text](https://imgur.com/T9AaNPQ "Click this to change destination")
+![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")
 
 ### Creating a Service Account
 Open the .json file in the gatorgrouper repository and find the "client-email". Copy the quoted text that looks like an email address. Return to the Sheet and open the sharing options. Paste the address and click send. Alternatively, if you would like to create your own service account for confidentiality and security, follow the tutorial found at www.twolio.com to create a personal service account.
