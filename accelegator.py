@@ -23,7 +23,6 @@ if __name__ == '__main__':
     FIRST_QUESTION = int(
         input("Enter number of first textual question to be analyzed: "))
     DATAFRAME = parse_csv_into_dataframe(DEFAULT_CSVFILE)
-    command = str(input('>>> '))
     arg1 = ""
     arg2 = ""
     arg3 = ""
@@ -39,6 +38,8 @@ if __name__ == '__main__':
         "quit"}
     fSet = frozenset(defined_commands)
     args = []
+    first_command = True
+    command = str(input('>>> (Type "help" for list of commands) '))  # will display only for first command
     while command != "quit":
         args = command.rsplit()
         command = args[0]
