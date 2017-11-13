@@ -33,7 +33,7 @@ spreadsheet and a Google form. In the Form, create a questionaire to with the
 information you wish to obtain from students. After you have at least one submission
 of the form go to the responses tab:
 
-<img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="207" width="481">
+![Response Tab](https://i.imgur.com/ctAYBmq.png)
 
 Now, click on the green icon with the white cross through it
 "![Sheet](https://i.imgur.com/mFFCicS.png "Click this to link")"
@@ -51,19 +51,19 @@ and OAuth2 credentials from the Google API Console. To begin:
 1. Create a new project.
 1. Click Enable API. Search for and enable the Google Drive API.
 1. Create credentials for a Web Server to access Application Data.
-1. Under "Are you using Google App Engine or Google Compute Engine?" select
-No, I am not using them.
+1. Under "Are you using Google App Engine or Google Compute Engine?",
+  select "No, I am not using them."
 1. Name the service account and grant it a Project Role of Editor.
 1. Download the `.json` file.
 1. Copy the `.json` file to your code directory and rename it to `AGAuthKey.json`
 
-<img src="https://www.twilio.com/blog/wp-content/uploads/2017/02/google-developer-console.gif" alt="Credit to twilio.com for this GIF" height="375" width="600">
+![Credit to twilio.com for the GIF](https://www.twilio.com/blog/wp-content/uploads/2017/02/google-developer-console.gif)
 
 And finally, there is one last step to link the `.json` file with the spreadsheet.
 
 1. Open up the newly created `AGAuthKey.json`
-1. Next to the row labeled **"Client_email"** copy the email without the quotation
-marks
+1. Next to the row labeled **"Client_email"**,
+  copy the email without the quotation marks
 1. Open the spreadsheet created with our Google Form earlier
 1. Go to **Share** and paste the email into the people field and hit **Send**
 
