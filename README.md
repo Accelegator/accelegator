@@ -27,7 +27,7 @@ To begin, we need to make sure that the OAuth client for python has been isntall
 ###Creating a Google Form
 In your Google account online, go to Google Drive and create a new Google Sheets spreadsheet and a Google form. In the Form, create a questionaire to with the information you wish to obtain from students. After you have at least one submission of the form go to the responses tab:
 
-<img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="481" width="207">
+<img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="207" width="481">
 
 and click on the green icon with the white cross through it to link the form to the Google Sheet:
 
