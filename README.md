@@ -14,26 +14,34 @@ Type the following commands before running:
 [1]: https://pip.pypa.io/en/stable/installing
 
 ```shell
-pip3 install --upgrade pip
-pip3 install -r requirements.txt --user
+pip3 install --user --upgrade pip
+pip3 install --user -r requirements.txt
 ```
 
 ## Initial Setup
 
-To begin, we need to make sure that the OAuth client for python has been isntalled. Inside the repository folder open up a terminal (or for windows users cmd). In the terminal use the command:
+To begin, we need to make sure that the OAuth client for python has been isntalled.
+Inside the repository folder open up a terminal (or for windows users cmd). In the
+terminal use the command:
 
 `python3 -m pip install --user gspread oauth2client`
 
 ### Creating a Google Form
-In your Google account online, go to Google Drive and create a new Google Sheets spreadsheet and a Google form. In the Form, create a questionaire to with the information you wish to obtain from students. After you have at least one submission of the form go to the responses tab:
+In your Google account online, go to Google Drive and create a new Google Sheets
+spreadsheet and a Google form. In the Form, create a questionaire to with the
+information you wish to obtain from students. After you have at least one submission
+of the form go to the responses tab:
 
 <img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="207" width="481">
 
-Now, click on the green icon with the white cross through it "![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")" to link the form to the Google Sheet.  
-If you need to change the destination, you can click on the three dot icon menu "![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")" to the and select "Select response destination"
+Now, click on the green icon with the white cross through it "![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")"
+to link the form to the Google Sheet. If you need to change the destination, you
+can click on the three dot icon menu "![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")"
+to the and select "Select response destination"
 
 ### Creating a Service Account
-For our program to use your new spreadsheet, you’ll need to create a service account and OAuth2 credentials from the Google API Console.  To begin:
+For our program to use your new spreadsheet, you’ll need to create a service account and
+OAuth2 credentials from the Google API Console. To begin:
 
 1. Go to the [Google APIs Console.](https://console.developers.google.com/apis/dashboard)
 2. Create a new project.
@@ -53,12 +61,44 @@ And finally, there is one last step to link the `.json` file with the spreadshee
 3. Open the spreadsheet created with our Google Form earlier
 4. Go to **Share** and paste the email into the people field and hit **Send**
 
+Create a Google Sheets spreadsheet and a Google Form in Google Drive.  After you
+have at least one submission of the Form, you can go to the responses tab and
+click on the green icon with the white cross through it.  This will enable you
+to link the Sheet to the Form.  You can either create a new Sheet or link to a
+preexisting one.  If you need to change the destination, you can click on the
+three dot icon menu to the right of the green icon and select "Select response
+destination".
 
-------
+Open the `.json` file in the `accelegator` repository and find the `"client-email"`.
+Copy the quoted text that looks like an email address.  Return to the Sheet and
+open the sharing options.  Paste the address and click send.
+
+In order to run Accelegator, the `.json` file for the program, AGAuthKey.json,
+must be in the root directory of the Accelegator product. The file can be found
+in the Google Drive folder for Accelegator and must be downloaded by the user.
+The reason for the `.json` file is that this program analyzes confidential
+information and so by having this file, only those with permission can actually
+run the program and gain access to the information.
+
+Within `defaults.py`, update the `DEFAULT_WORKBOOK` constant to the name of your
+Sheet.
 
 ## Usage
 
-Accelegator analysis advisee questionnaires and uses natural language
+To initially run Accelegator, enter python3 accelegator.py into the terminal.
+After starting the program, the user will be asked to "Enter number of first
+textual question to be analyzed". For the original form being used, the number
+is 10. The reason for this is that the gensim analysis must begin at the first
+textual question and runs through the last question. By adding this option, if
+the form is ever edited so that the first textual question is in a different
+position, the user can specify where the analysis should begin instead of having
+to edit the source code.
+
+Following that, the user may enter any viable command to execute a specific
+feature of the product. It is recommended to run `help` at first in order
+to see the possible commands
+
+Accelegator analyzes advisee questionnaires and uses natural language
 processing to compile and sort the information for
 advisors.
 
@@ -89,7 +129,10 @@ on advisees including groups of similar advisees, skills, and more.
 ### Commands
 
 Accelegator has command options for a better user experience such as help and
-quit.
+quit. Help displays all the possible commands for the program and when another
+command is added following help (ie >>>help show) the program will explain to
+the user how to use that command and the arguments that it may require in order
+to be run.
 
 ## Testing
 
@@ -114,6 +157,10 @@ automatic linting:
 ```shell
 autopep8 --in-place --aggressive --aggressive *.py
 ```
+
+If the autolinting tool cannot fix every error, it will display where each
+error is in the program and what the error type is in order for the user to
+address it properly.
 
 ### Test Coverage
 
