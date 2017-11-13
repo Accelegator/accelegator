@@ -44,10 +44,11 @@ def query_list(dataframe):
 def query_show(dataframe, email):
     """ returns latest responses for each field for the given student """
     logging.debug("query_show: " + email)
+    email = email.lower()
     retlist = []
     (rows, cols) = dataframe.shape
     for rowindex in range(0, rows):
-        if dataframe.iat[rowindex, EMAIL_INDEX] == email:
+        if dataframe.iat[rowindex, EMAIL_INDEX].lower() == email:
             retlist = []
             for colindex in range(0, cols):
                 field = dataframe.columns[colindex]
@@ -68,10 +69,11 @@ def query_show(dataframe, email):
 def query_show_field(dataframe, email, field):
     """ returns all historical responses for the given field and student """
     logging.debug("query_show_field: " + str(field) + " " + str(email))
+    email = email.lower()
     response_list = []
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
-        if dataframe.iat[rowindex, EMAIL_INDEX] == email:
+        if dataframe.iat[rowindex, EMAIL_INDEX].lower() == email:
             response = dataframe.iat[rowindex, field]
             _datetime = dataframe.iat[rowindex, TIMESTAMP_INDEX]
             _latest = _determine_latest(dataframe, email,
@@ -86,11 +88,12 @@ def query_show_field(dataframe, email, field):
 def query_search(dataframe, keyword):
     """ returns dataframe rows containing the keyword """
     logging.debug("query_search: " + keyword)
+    keyword = keyword.lower()
     retlist = []
     (rows, cols) = dataframe.shape
     for rowindex in range(0, rows):
         for colindex in range(0, cols):
-            if keyword in str(dataframe.iat[rowindex, colindex]):
+            if keyword in str(dataframe.iat[rowindex, colindex]).lower():
                 email = dataframe.iat[rowindex, EMAIL_INDEX]
                 field = dataframe.columns[colindex]
                 response = dataframe.iat[rowindex, colindex]
