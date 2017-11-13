@@ -29,9 +29,8 @@ In your Google account online, go to Google Drive and create a new Google Sheets
 
 <img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="207" width="481">
 
-and click on the green icon with the white cross through it to link the form to the Google Sheet:  ![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")
-
-If you need to change the destination, you can click on the three dot icon menu to the right of the green icon and select "Select response destination":  ![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")
+Now, click on the green icon with the white cross through "![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")" it to link the form to the Google Sheet.  
+If you need to change the destination, you can click on the three dot icon menu "![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")" to the right of the green icon and select "Select response destination"
 
 ### Creating a Service Account
 For our program to use your new spreadsheet, you’ll need to create a service account and OAuth2 credentials from the Google API Console.  To begin:
@@ -50,9 +49,9 @@ For our program to use your new spreadsheet, you’ll need to create a service a
 And finally, there is one last step to link the `.json` file with the spreadsheet.
 
 1. Open up the newly created `AGAuthKey.json`
-2. Next to the row labeled `"Client_email"` copy the email without the quotation marks
+2. Next to the row labeled **"Client_email"** copy the email without the quotation marks
 3. Open the spreadsheet created with our Google Form earlier
-4. Go to "Share" and paste the email into the people field and hit "Send"
+4. Go to **Share** and paste the email into the people field and hit **Send**
 
 
 ------
