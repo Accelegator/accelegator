@@ -1,5 +1,5 @@
 """Define strings that will be displayed by the REPL."""
-from map_fields import fields
+from map_fields import FIELDS
 from colors import bold
 
 
@@ -37,8 +37,8 @@ LIST_COMMAND = "list"
 LIST_DESCRIPTION = "List emails of all advisees"
 LIST_ARGUMENTS = "None"
 
-fields_list = list(fields)
-fields_list.sort()
+FIELDS_LIST = list(FIELDS)
+FIELDS_LIST.sort()
 SHOW_HEADER = "show\n----"
 SHOW_COMMAND_ONE = "show <email>"
 SHOW_DESCRIPTION_ONE = "Display flattened (i.e. the latest response for each field) responses for advisee with <email>"
@@ -46,7 +46,7 @@ SHOW_ARGUMENTS_ONE = "<email>: Email of advisee. Include \"@allegheny.edu\""
 
 SHOW_COMMAND_TWO = "show <email> <field>"
 SHOW_DESCRIPTION_TWO = "Display all responses for advisee with <email> for given <field> (a number). Will show all previous and latest responses."
-SHOW_ARGUMENTS_TWO = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\t" + "\n\t".join(fields_list)
+SHOW_ARGUMENTS_TWO = "<email>: Email of advisee. Include \"@allegheny.edu\"\n<field>: Can be any of the following\n\t" + "\n\t".join(FIELDS_LIST)
 
 SEARCH_HEADER = "search\n------"
 SEARCH_COMMAND_ONE = "search <field>"
@@ -55,7 +55,7 @@ SEARCH_ARGUMENTS_ONE = "<keyword>: Any single string"
 
 SEARCH_COMMAND_TWO = "search <field> <keyword>"
 SEARCH_DESCRIPTION_TWO = "can input any of the fields listed below and insert any keyword which would parse through the database for anything matching the keyword or anything close to it"
-SEARCH_ARGUMENTS_TWO = "<keyword>: Any single string\n<field>: Can be any of the following\n\t" + "\n\t".join(fields_list)
+SEARCH_ARGUMENTS_TWO = "<keyword>: Any single string\n<field>: Can be any of the following\n\t" + "\n\t".join(FIELDS_LIST)
 
 WRITE_HEADER = "write\n-----"
 WRITE_COMMAND = "write"
@@ -82,4 +82,9 @@ ARGUMENTS_LABEL = "Arguments: "
 
 # Command display strings
 LIST_HEADER = bold("Advisees")
-NO_ADVISEES = "None to list"
+NO_ADVISEES = "No advisees to list"
+NO_RESPONSES = "No responses to list"
+SHOW_HEADER = "Showing flattened responses for advisee with email {0}"
+SHOW_WITH_FIELD_HEADER = "Showing all responses for advisee with email {0} to field {1}"
+SEARCH_HEADER = "Displaying search results for keyword {0}"
+SEARCH_WITH_FIELD_HEADER = "Displaying search results for keyword {0} in field {1}"
