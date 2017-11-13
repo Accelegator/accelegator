@@ -118,7 +118,7 @@ def format_command_description(command_one_tuple, command_two_tuple=None):
     description_one = command_one_tuple[2]
     arguments_one = command_one_tuple[3]
     command_one_string = header + "\n" + display_strings.COMMAND_LABEL + command_one + "\n" + \
-        display_strings.DESCRIPTION_LABEL + description_one + display_strings.ARGUMENTS_LABEL + arguments_one + "\n"
+        display_strings.DESCRIPTION_LABEL + description_one + "\n" + display_strings.ARGUMENTS_LABEL + arguments_one + "\n"
 
     if command_two_tuple is not None:
         logging.info("Formatting second command")
