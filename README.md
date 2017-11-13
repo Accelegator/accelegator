@@ -27,6 +27,7 @@ terminal use the command:
 `python3 -m pip install --user gspread oauth2client`
 
 ### Creating a Google Form
+
 In your Google account online, go to Google Drive and create a new Google Sheets
 spreadsheet and a Google form. In the Form, create a questionaire to with the
 information you wish to obtain from students. After you have at least one submission
@@ -34,12 +35,15 @@ of the form go to the responses tab:
 
 <img src="https://i.imgur.com/ctAYBmq.png" alt="Response Tab" height="207" width="481">
 
-Now, click on the green icon with the white cross through it "![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")"
-to link the form to the Google Sheet. If you need to change the destination, you
-can click on the three dot icon menu "![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")"
+Now, click on the green icon with the white cross through it
+"![Link to Sheet Image](https://i.imgur.com/mFFCicS.png "Click this to link")"
+to link the form to the Google Sheet. If you need to change the destination, you can click
+on the three dot icon menu
+"![Change Destination Image](https://i.imgur.com/T9AaNPQ.png "Click this to change destination")"
 to the and select "Select response destination"
 
 ### Creating a Service Account
+
 For our program to use your new spreadsheet, you’ll need to create a service account and
 OAuth2 credentials from the Google API Console. To begin:
 
@@ -48,9 +52,9 @@ OAuth2 credentials from the Google API Console. To begin:
 3. Click Enable API. Search for and enable the Google Drive API.
 4. Create credentials for a Web Server to access Application Data.
 5. Under "Are you using Google App Engine or Google Compute Engine?" select No, I am not using them.
-5. Name the service account and grant it a Project Role of Editor.
-6. Download the `.json` file.
-7. Copy the `.json` file to your code directory and rename it to `AGAuthKey.json`
+6. Name the service account and grant it a Project Role of Editor.
+7. Download the `.json` file.
+8. Copy the `.json` file to your code directory and rename it to `AGAuthKey.json`
 
 <img src="https://www.twilio.com/blog/wp-content/uploads/2017/02/google-developer-console.gif" alt="Credit to twilio.com for this GIF" height="375" width="600">
 
