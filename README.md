@@ -94,7 +94,6 @@ Sheet.
 To initially run Accelegator enter
 ```
 python3 accelegator.py
-
 ```
 at the root directory.  After starting the program, the user will be prompted
 to "Enter number of first textual question to be analyzed". For the original
@@ -122,8 +121,9 @@ The commands are as follows:
 `write`
 `gensim`
 
-An example is `help list`.  This will show the description of the command and
-the arguments of the command (if available).
+An example is `help list`.
+This will show the description of the command and the arguments of the
+command (if available).
 
 Another example is `help show`.  This command will tell you the how the
 `<email>` must be written to interact with the program.  It also lists each of
@@ -133,10 +133,12 @@ or short answer questions.
 
 Command:
 `list`
+
 This command succintly lists the email addresses of the professor's advisees.
 
 Command:
 `show`
+
 This command is accompanied by `email` , (`show <email>`) which then brings up
 the student submission form in its entirety.  It can also be used as `show
 <email> <field>` where `field` is a word command that is one of the `field`s
@@ -145,6 +147,7 @@ the student's submission form.
 
 Command:
 `search`
+
 This command, when accompanied with a `keyword` allows the professor to search
 for specific terms that their students have used.  For example, many of the
 textual questions refer to academic, personal, and career interests.  If the
@@ -156,6 +159,7 @@ search is the command and security is the keyword.
 
 Command:
 `write`
+
 This command could be used in a myriad of scenarios.  One example of how to
 use it is if the professor was preparing for an adviser meeting with one
 particular student.  To pull up the most recent form that said student
