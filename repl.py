@@ -22,7 +22,7 @@ def repl(dataframe, call, command, arg1, arg2):
     elif call == 3:
         return display.display_show_with_field(
             queries.query_show_field(
-                dataframe, arg1, int(arg2)+1))
+                dataframe, arg1, int(arg2) + 1))
         logging.debug(
             "calling query and display for " +
             command +
