@@ -122,6 +122,14 @@ analysis for every entry in the target.
 In order to run, at minimum, ``<target>`` needs to be declared. This is also
 case sensitive.
 
+The visual of the LDA analysis represents all of the words that are related to
+each other. If they reach a certain level of relevance to each other they will
+appear in a group together. If the user hovers over the circle that is a topic,
+they will see every word that is in the relevant topic and the frequency of each
+word. The LDA also produces a textual output, it shows the actual values of how
+related the words are to the topic. The higher the number is the more related
+the words are.
+
 ### Legalities and Privacy
 
 See LegalitiesPrivacy_Accelegator.md file for information.
