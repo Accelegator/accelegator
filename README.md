@@ -91,7 +91,7 @@ Sheet.
 
 ## Usage
 
-To initially run Accelegator, enter python3 accelegator.py into the terminal.
+To initially run Accelegator, enter `python3 accelegator.py` into the terminal.
 After starting the program, the user will be asked to "Enter number of first
 textual question to be analyzed". For the original form being used, the number
 is 10. The reason for this is that the gensim analysis must begin at the first
@@ -132,7 +132,7 @@ the words are.
 
 ### Legalities and Privacy
 
-See LegalitiesPrivacy_Accelegator.md file for information.
+See Accelegator_Legalities.md file for information.
 
 ### Search Queries and Field
 

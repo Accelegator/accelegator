@@ -9,7 +9,7 @@ from defaults import DEFAULT_WORKBOOK
 
 
 def create_csv():
-    """ Pulls data from Google Sheets, writing to the default CSV file """
+    """Pull data from Google Sheets, writing to the default CSV file."""
 
     file_name = "./" + DEFAULT_CSVFILE
     logging.info("Authenticating to Google Sheets to obtain Google Form data")

@@ -10,7 +10,7 @@ TIMESTAMP_INDEX = 0
 
 
 def parse_csv_into_dataframe(filepath):
-    """ parses csv file into an pandas dataframe """
+    """Parses csv file into an pandas dataframe."""
     dataframe = pandas.read_csv(filepath)
     logging.debug("generated pandas dataframe:")
     logging.debug(dataframe)
@@ -18,7 +18,7 @@ def parse_csv_into_dataframe(filepath):
 
 
 def _determine_latest(dataframe, email, date, field):
-    """ returns true if given field is the latest response """
+    """Return true if given field is the latest response."""
     logging.debug("determine_latest: " + email + date + str(field))
     (rows, _) = dataframe.shape
     for rowindex in range(0, rows):
@@ -30,7 +30,7 @@ def _determine_latest(dataframe, email, date, field):
 
 
 def query_list(dataframe):
-    """ returns list of emails of the advisees that have responded """
+    """Return list of emails of the advisees that have responded."""
     logging.debug("query_list")
     retlist = []
     (rows, _) = dataframe.shape
@@ -42,7 +42,7 @@ def query_list(dataframe):
 
 
 def query_show(dataframe, email):
-    """ returns latest responses for each field for the given student """
+    """Return latest responses for each field for the given student."""
     logging.debug("query_show: " + email)
     email = email.lower()
     retlist = []
@@ -67,7 +67,7 @@ def query_show(dataframe, email):
 
 
 def query_show_field(dataframe, email, field):
-    """ returns all historical responses for the given field and student """
+    """Return all historical responses for the given field and student."""
     logging.debug("query_show_field: " + str(field) + " " + str(email))
     email = email.lower()
     response_list = []
@@ -86,7 +86,7 @@ def query_show_field(dataframe, email, field):
 
 
 def query_search(dataframe, keyword):
-    """ returns dataframe rows containing the keyword """
+    """Return dataframe rows containing the keyword."""
     logging.debug("query_search: " + keyword)
     keyword = keyword.lower()
     retlist = []
@@ -108,7 +108,7 @@ def query_search(dataframe, keyword):
 
 
 def query_search_field(dataframe, field, keyword):
-    """ returns dataframe rows where the field contains the keyword """
+    """Return dataframe rows where the field contains the keyword."""
     logging.debug("query_search_field: " + keyword + str(field))
     trimmed_frame = dataframe.iloc[:, [TIMESTAMP_INDEX, EMAIL_INDEX, field]]
     (_, retlist) = query_search(trimmed_frame, keyword)
