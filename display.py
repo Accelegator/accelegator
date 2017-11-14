@@ -171,7 +171,7 @@ def display_list(list_of_advisees):
 
 
 def display_show(result_tuple):
-    """ Returns string with an advisee's flattened responses. Input is in form: (email, [((timestamp, latest), field, response)]) """
+    """Return string with an advisee's flattened responses. Input is in form: (email, [((timestamp, latest), field, response)])."""
 
     if result_tuple is None or result_tuple == ():
         logging.error("No input tuple given")
@@ -209,7 +209,7 @@ def display_show(result_tuple):
 
 
 def display_show_with_field(result_tuple):
-    """ Returns a string with an advisee's past and current responses to a given field. Input is in form: (email, field, [((timestamp, latest), response)])"""
+    """Return a string with an advisee's past and current responses to a given field. Input is in form: (email, field, [((timestamp, latest), response)])."""
 
     print("result_tuple: " + str(result_tuple))
     if result_tuple is None or result_tuple == ():
@@ -247,8 +247,8 @@ def display_show_with_field(result_tuple):
 
 def display_search(result_tuple, has_field=False):
     """Return string of list of advisees with responses that match search
-        query. result_tuple takes on the form:
-        (keyword, [((timestamp, latest), email, field, response)])."""
+    query. result_tuple takes on the form:
+    (keyword, [((timestamp, latest), email, field, response)])."""
     KEYWORD_INDEX = 0
 
     # result_tuple differs based on whether it is returned by the query_search
@@ -310,7 +310,7 @@ def display_search(result_tuple, has_field=False):
 
 
 def align(left, right, is_negative_timestamp=False):
-    """ Returns string with "left" aligned to the left and "right" aligned to the right """
+    """Return string with "left" aligned to the left and "right" aligned to the right."""
     if is_negative_timestamp:
         logging.debug(
             "Moving right over 8 characters to account for ansi sequence")
@@ -322,7 +322,7 @@ def align(left, right, is_negative_timestamp=False):
 
 
 def display_search_with_field(result_tuple):
-    """ Returns string of list of advisees with responses that match search
-        query and field. result_tuple takes on the form:
-        (keyword, field, [((timestamp, latest), email, response)]) """
+    """Return string of list of advisees with responses that match search
+    query and field. result_tuple takes on the form:
+    (keyword, field, [((timestamp, latest), email, response)])."""
     return display_search(result_tuple, True)
