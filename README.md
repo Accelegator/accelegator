@@ -127,9 +127,7 @@ command (if available).
 
 Another example is `help show`.  This command will tell you the how the
 `<email>` must be written to interact with the program.  It also lists each of
-the `<field>`s that you can search by.  Numbers 1-9 of these fields are non-
-textual questions while numbers 10-24 of these fields are textual questions,
-or short answer questions.
+the `<field>`s that you can search by.
 
 Command:
 `list`
