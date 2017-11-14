@@ -59,7 +59,7 @@ case sensitive.
 
 ### Legalities and Privacy
 
-See LegalitiesPrivacy_Accelegator.md file for information.
+See Accelegator_Legalities.md file for information.
 
 ### Search Queries and Field
 
