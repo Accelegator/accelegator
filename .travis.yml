@@ -20,6 +20,7 @@ install:
   - pip3 install ansicolors
   - pip3 install gensim
   - pip3 install profanity
+  - pip3 install coveralls
 
 script:
   - pytest tests
