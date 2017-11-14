@@ -78,7 +78,7 @@ if __name__ == '__main__':
         elif(call == 13):
             accelegator_NLP.read_responses_all(DATAFRAME, FIRST_QUESTION)
         else:
-            print(repr(output))
+            print(output)
         arg1 = ""
         arg2 = ""
         arg3 = ""
