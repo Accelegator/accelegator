@@ -1,4 +1,4 @@
-"""Makes program display - displays help option, search, quit and other commands for user"""
+"""Format and return strings to display."""
 from colors import bold
 from colors import negative
 from colors import underline

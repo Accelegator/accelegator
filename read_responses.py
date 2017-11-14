@@ -77,5 +77,4 @@ def read_responses_all(data):
         for column in range(10, columns):
             texts.append(str(data.iat[row, column]))
     responses = [[word for word in document.split()]for document in texts]
-    # print(responses)
     gensim_analysis(responses)
