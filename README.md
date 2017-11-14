@@ -99,12 +99,12 @@ python3 accelegator.py
 
 at the root directory.  After starting the program, the user will be prompted
 to "Enter number of first textual question to be analyzed". For the original
-form being used, the number is 10 and the user must input `10 `. The reason
-for this is that the gensim analysis must begin at the first textual question
-and runs through the last question. By adding this option, if the form is ever
-edited so that the first textual question is in a different position, the user
-can specify where the analysis should begin instead of having to edit the
-source code.
+form being used, the number is 10 and the user must input `10`.
+The reason for this is that the gensim analysis must begin at the first
+textual question and runs through the last question. By adding this option, if
+the form is ever edited so that the first textual question is in a different
+position, the user can specify where the analysis should begin instead of
+having to edit the source code.
 
 Following that, the user may enter any viable command to execute a specific
 feature of the product. It is recommended to run `help` at first in order
@@ -182,8 +182,7 @@ analyze data by specific question, every question, specific person, every
 person or all the data with textual results.
 
 Run LDA with the command:
-
-` gensim <target> <field> `
+`gensim <target> <field>`
 
 Where target = `person` or `question`
 and field = `<email>@allegheny.edu` or `question number`.You could also leave
