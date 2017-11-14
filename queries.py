@@ -68,6 +68,7 @@ def query_show(dataframe, email):
 
 def query_show_field(dataframe, email, field):
     """ returns all historical responses for the given field and student """
+    field += 1
     logging.debug("query_show_field: " + str(field) + " " + str(email))
     email = email.lower()
     response_list = []
