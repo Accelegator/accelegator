@@ -91,44 +91,116 @@ Sheet.
 
 ## Usage
 
-To initially run Accelegator, enter `python3 accelegator.py` into the terminal.
-After starting the program, the user will be asked to "Enter number of first
-textual question to be analyzed". For the original form being used, the number
-is 10. The reason for this is that the gensim analysis must begin at the first
+To initially run Accelegator enter
+
+```
+python3 accelegator.py
+```
+
+at the root directory.  After starting the program, the user will be prompted
+to "Enter number of first textual question to be analyzed". For the original
+form being used, the number is 10 and the user must input `10`.
+The reason for this is that the gensim analysis must begin at the first
 textual question and runs through the last question. By adding this option, if
 the form is ever edited so that the first textual question is in a different
-position, the user can specify where the analysis should begin instead of having
-to edit the source code.
+position, the user can specify where the analysis should begin instead of
+having to edit the source code.
 
 Following that, the user may enter any viable command to execute a specific
 feature of the product. It is recommended to run `help` at first in order
-to see the possible commands
+to see the possible commands.
 
-Accelegator analyzes advisee questionnaires and uses natural language
-processing to compile and sort the information for
-advisors.
+While the commands possible for Accelegator are listed under `help`, a brief
+overview is provided to better explain them.
+
+If you wish to understand what each command means, use:
+`help` and then type the name of the command.
+
+The commands are as follows:
+`list`
+`show`
+`search`
+`write`
+`gensim`
+
+An example is `help list`.
+This will show the description of the command and the arguments of the
+command (if available).
+
+Another example is `help show`.  This command will tell you the how the
+`<email>` must be written to interact with the program.  It also lists each of
+the `<field>`s that you can search by.
+
+Command:
+`list`
+
+This command succintly lists the email addresses of the professor's advisees.
+
+Command:
+`show`
+
+This command is accompanied by
+`email` , entered as `show <email>`
+
+which then brings up the student submission form in its entirety.  It can also
+be used as `show <email> <field>` where `field`is a word command that is one
+of the `field`s shown in `help show`.  In that case, it would bring up a
+specific answer from the student's submission form.
+
+Command:
+`search`
+
+This command, when accompanied with a `keyword` allows the professor to search
+for specific terms that their students have used.  For example, many of the
+textual questions refer to academic, personal, and career interests.  If the
+professor learned of a great internship opportunity for students who are
+interested in cyber security and wanted to reach out to his advisees to make
+them aware of it, they could focus their outreach by using the `search`
+command. Specifically, the professor could enter `search security` where
+search is the command and security is the keyword.
+
+Command:
+`write`
+
+This command could be used in a myriad of scenarios.  One example of how to
+use it is if the professor was preparing for an adviser meeting with one
+particular student.  To pull up the most recent form that said student
+submitted for review, the professor could enter the command
+`write show <studentEmail>`.
+This would then prompt the professor to name the file where they wanted the
+information to be stored.  Once saved, the advisor could use this file of
+information as a guide to the conversation that would ensue. `write` could
+also be used to print out the list of advisees or to print out a list of
+advisees interested in a certain topic.  This command is useful if the
+professor wishes to store information from the program in a different file.
+
+Accelegator also analyzes advisee questionnaires and uses natural language
+processing to compile and sort the information for advisors.
 
 Along with the NLP, Accelegator uses Latent Dirichlet Allocation (LDA) to
 analyze data by specific question, every question, specific person, every
 person or all the data with textual results.
 
-How to run:
-`` gensim <target> <field> ``
+Run LDA with the command:
+`gensim <target> <field>`
 
 Where target = `person` or `question`
-and field = `<email>@allegheny.edu` or `question number` or leave this blank for
-analysis for every entry in the target.
+and field = `<email>@allegheny.edu` or `question number`.You could also leave
+this blank for analysis for every entry in the target.
 
 In order to run, at minimum, ``<target>`` needs to be declared. This is also
 case sensitive.
 
 The visual of the LDA analysis represents all of the words that are related to
 each other. If they reach a certain level of relevance to each other they will
-appear in a group together. If the user hovers over the circle that is a topic,
-they will see every word that is in the relevant topic and the frequency of each
-word. The LDA also produces a textual output, it shows the actual values of how
-related the words are to the topic. The higher the number is the more related
-the words are.
+appear in a group together. If the user hovers over the circle that is a
+topic, they will see every word that is in the relevant topic and the
+frequency of each word. The LDA also produces a textual output, it shows the
+actual values of how related the words are to the topic. The higher the number
+is the more related the words are.
+
+See AccelegatorLDavis_Analysis.md for more information about how to interpret
+this visualization.
 
 ### Legalities and Privacy
 
