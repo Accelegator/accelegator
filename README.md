@@ -92,9 +92,11 @@ Sheet.
 ## Usage
 
 To initially run Accelegator enter
+
 ```
 python3 accelegator.py
 ```
+
 at the root directory.  After starting the program, the user will be prompted
 to "Enter number of first textual question to be analyzed". For the original
 form being used, the number is 10 and the user must input `10 `. The reason
@@ -137,11 +139,13 @@ This command succintly lists the email addresses of the professor's advisees.
 Command:
 `show`
 
-This command is accompanied by `email` , (`show <email>`) which then brings up
-the student submission form in its entirety.  It can also be used as `show
-<email> <field>` where `field` is a word command that is one of the `field`s
-shown in `help show`.  In that case, it would bring up a specific answer from
-the student's submission form.
+This command is accompanied by
+`email` , entered as `show <email>`
+
+which then brings up the student submission form in its entirety.  It can also
+be used as `show <email> <field>` where `field`is a word command that is one
+of the `field`s shown in `help show`.  In that case, it would bring up a
+specific answer from the student's submission form.
 
 Command:
 `search`
@@ -161,12 +165,13 @@ Command:
 This command could be used in a myriad of scenarios.  One example of how to
 use it is if the professor was preparing for an adviser meeting with one
 particular student.  To pull up the most recent form that said student
-submitted for review, the professor could enter the command `write show
-<studentEmail>`.  This would then prompt the professor to name the file where
-they wanted the information to be stored.  Once saved, the advisor could use
-this file of information as a guide to the conversation that would ensue.
-`write` could also be used to print out the list of advisees or to print out a
-list of advisees interested in a certain topic.  This command is useful if the
+submitted for review, the professor could enter the command
+`write show <studentEmail>`.
+This would then prompt the professor to name the file where they wanted the
+information to be stored.  Once saved, the advisor could use this file of
+information as a guide to the conversation that would ensue. `write` could
+also be used to print out the list of advisees or to print out a list of
+advisees interested in a certain topic.  This command is useful if the
 professor wishes to store information from the program in a different file.
 
 Accelegator also analyzes advisee questionnaires and uses natural language
@@ -177,7 +182,8 @@ analyze data by specific question, every question, specific person, every
 person or all the data with textual results.
 
 Run LDA with the command:
-`` gensim <target> <field> ``
+
+` gensim <target> <field> `
 
 Where target = `person` or `question`
 and field = `<email>@allegheny.edu` or `question number`.You could also leave
