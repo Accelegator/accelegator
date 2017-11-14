@@ -4,18 +4,18 @@ import display
 
 def test_display_search_with_latest_timestamp():
     """ Checks display_search() returns correct string if timestamp is latest (should be in negative color) """
-    result_tuple = ("keyword", [(("timestamp", True), "email", "field", "response")])
+    result_tuple = ("keyword", [(("timestamp", True), "email", "1. What name would you like to be called by?", "response")])
     result = display.display_search(result_tuple)
     num_of_spaces = 66
-    assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "\x1b[7mtimestamp\x1b[0m\nfield\nresponse\n\n")
+    assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "\x1b[7mtimestamp\x1b[0m\n\x1b[4mname\x1b[0m\nresponse\n\n")
 
 
 def test_display_search_with_non_latest_timestamp():
     """ Checks display_search() returns correct string if timestamp is not latest """
-    result_tuple = ("keyword", [(("timestamp", False), "email", "field", "response")])
+    result_tuple = ("keyword", [(("timestamp", False), "email", "1. What name would you like to be called by?", "response")])
     result = display.display_search(result_tuple)
     num_of_spaces = 66
-    assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "timestamp\nfield\nresponse\n\n")
+    assert repr(result) == repr("Displaying search results for keyword \x1b[1mkeyword\x1b[0m\n\n" + "email" + ' ' * num_of_spaces + "timestamp\n\x1b[4mname\x1b[0m\nresponse\n\n")
 
 
 def test_display_search_with_field_with_empty_tuple():
@@ -23,14 +23,14 @@ def test_display_search_with_field_with_empty_tuple():
     result_tuple = ()
     result = display.display_search(result_tuple)
 
-    assert result == "No input tuple given"
+    assert result == "No responses to list"
 
 
 def test_display_search_with_field_with_none_tuple():
     """ Checks if display_search_with_field() returns correct string when result_tuple is None """
     result = display.display_search(None)
 
-    assert result == "No input tuple given"
+    assert result == "No responses to list"
 
 
 def test_align_with_negative_timestamp():

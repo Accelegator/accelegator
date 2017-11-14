@@ -159,7 +159,7 @@ def display_help():
 
 def display_list(list_of_advisees):
     """Return a string that is list of advisees' emails."""
-    result = display_strings.LIST_HEADER + "\n"
+    result = display_strings.LIST_COMMAND_HEADER + "\n"
 
     if not list_of_advisees or list_of_advisees is None:
         return result + display_strings.NO_ADVISEES + "\n"
@@ -186,7 +186,7 @@ def display_show(result_tuple):
     FIELD_INDEX = 1
     RESPONSE_INDEX = 2
 
-    result = textwrap.fill(display_strings.SHOW_HEADER.format(bold(result_tuple[EMAIL_INDEX])), width=80) + "\n\n"
+    result = textwrap.fill(display_strings.SHOW_COMMAND_HEADER.format(bold(result_tuple[EMAIL_INDEX])), width=80) + "\n\n"
 
     RESPONSE_LIST = result_tuple[RESPONSE_LIST_INDEX]
 
@@ -226,7 +226,7 @@ def display_show_with_field(result_tuple):
     TIMESTAMP_LATEST_INDEX = 1
     RESPONSE_INDEX = 1
 
-    result = textwrap.fill(display_strings.SHOW_WITH_FIELD_HEADER.format(bold(result_tuple[EMAIL_INDEX]), bold(map_fields.get_abbreviated_field(result_tuple[FIELD_INDEX]))), width=80) + "\n\n"
+    result = textwrap.fill(display_strings.SHOW_WITH_FIELD_COMMAND_HEADER.format(bold(result_tuple[EMAIL_INDEX]), bold(map_fields.get_abbreviated_field(result_tuple[FIELD_INDEX]))), width=80) + "\n\n"
 
     RESPONSE_LIST = result_tuple[RESPONSE_LIST_INDEX]
     if not RESPONSE_LIST:
@@ -272,9 +272,9 @@ def display_search(result_tuple, has_field=False):
     KEYWORD = bold(result_tuple[KEYWORD_INDEX])
     if has_field:
         FIELD = bold(map_fields.get_field_string(result_tuple[FIELD_INDEX]))
-        result = textwrap.fill(display_strings.SEARCH_WITH_FIELD_HEADER.format(KEYWORD, bold(FIELD)), width=80) + "\n\n"
+        result = textwrap.fill(display_strings.SEARCH_WITH_FIELD_COMMAND_HEADER.format(KEYWORD, FIELD), width=80) + "\n\n"
     else:
-        result = textwrap.fill(display_strings.SEARCH_HEADER.format(KEYWORD), width=80) + "\n\n"
+        result = textwrap.fill(display_strings.SEARCH_COMMAND_HEADER.format(KEYWORD), width=80) + "\n\n"
 
     RESPONSE_LIST = result_tuple[RESPONSE_LIST_INDEX]
 

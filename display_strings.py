@@ -81,10 +81,10 @@ DESCRIPTION_LABEL = "Description: "
 ARGUMENTS_LABEL = "Arguments: "
 
 # Command display strings
-LIST_HEADER = bold("Advisees")
+LIST_COMMAND_HEADER = bold("Advisees")
 NO_ADVISEES = "No advisees to list"
 NO_RESPONSES = "No responses to list"
-SHOW_HEADER = "Showing flattened responses for advisee with email {0}"
-SHOW_WITH_FIELD_HEADER = "Showing all responses for advisee with email {0} to field {1}"
-SEARCH_HEADER = "Displaying search results for keyword {0}"
-SEARCH_WITH_FIELD_HEADER = "Displaying search results for keyword {0} in field {1}"
+SHOW_COMMAND_HEADER = "Showing flattened responses for advisee with email {0}"
+SHOW_WITH_FIELD_COMMAND_HEADER = "Showing all responses for advisee with email {0} to field {1}"
+SEARCH_COMMAND_HEADER = "Displaying search results for keyword {0}"
+SEARCH_WITH_FIELD_COMMAND_HEADER = "Displaying search results for keyword {0} in field {1}"

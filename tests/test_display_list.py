@@ -6,14 +6,14 @@ def test_display_list_with_none_list():
     """ Checks if correct string is returned when no list is passed in """
     list_string = display.display_list(None)
 
-    assert list_string == "\x1b[1mAdvisees\x1b[0m\nNone to list\n"
+    assert list_string == "\x1b[1mAdvisees\x1b[0m\nNo advisees to list\n"
 
 
 def test_display_list_with_empty_list():
     """ Checks if correct string is returned when empty list is passed in """
     list_string = display.display_list([])
 
-    assert list_string == "\x1b[1mAdvisees\x1b[0m\nNone to list\n"
+    assert list_string == "\x1b[1mAdvisees\x1b[0m\nNo advisees to list\n"
 
 
 def test_display_list_with_string_list():

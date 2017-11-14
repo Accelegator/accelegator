@@ -1,5 +1,4 @@
 """Accelegator: A software tool for accelerated and adaptive advising."""
-
 # python libraries
 import sys
 # local dependencies
@@ -38,7 +37,6 @@ if __name__ == '__main__':
         "quit"}
     fSet = frozenset(defined_commands)
     args = []
-    first_command = True
     command = str(input('>>> (Type "help" for list of commands) '))  # will display only for first command
     while command != "quit":
         args = command.rsplit()
@@ -80,7 +78,7 @@ if __name__ == '__main__':
         elif(call == 13):
             accelegator_NLP.read_responses_all(DATAFRAME, FIRST_QUESTION)
         else:
-            print(output)
+            print(repr(output))
         arg1 = ""
         arg2 = ""
         arg3 = ""
